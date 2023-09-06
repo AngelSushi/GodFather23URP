@@ -104,7 +104,7 @@ public class spawn : MonoBehaviour
         }
 
         respawn = Instantiate(ennemyToSpawn, spawnPoint.transform.position, spawnPoint.transform.rotation);
-
+        GameManager._instance._listMonster.Add(respawn);
         respawn.transform.localScale = scale;
         
         
