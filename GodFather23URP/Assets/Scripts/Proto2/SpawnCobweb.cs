@@ -7,6 +7,8 @@ public class SpawnCobweb : MonoBehaviour
     [SerializeField] GameObject _cobweb;
     [SerializeField] GameObject _checkpoint;
     [SerializeField] int _maxAmountOfWeb;
+    public int _maxTotalOfWeb;
+    public int _maxAmountOfCheckpoint;
     [SerializeField] float _spawnRange;
     //int _amountOfWeb;
     [SerializeField] GameObject _spider;
@@ -16,24 +18,26 @@ public class SpawnCobweb : MonoBehaviour
     int _cobwebID = 0;
     public List<GameObject> _triangles = new List<GameObject>();
 
-    int _webAmount;
+    [HideInInspector] public int _webAmount;
     void Start()
     {
         _spider = GameObject.FindGameObjectWithTag("Player");
         //StartCoroutine(Coro());
         _lastWeb = gameObject;
+        _triangles.Add(gameObject);
     }
 
     void Update()
     {
         //Debug.Log((_spider.transform.position - transform.position).magnitude);
         //Debug.Log("cobweb id : " + _cobwebID + " cobweb count : " + _cobwebList[_cobwebID].Cobwebs.Count);-
-        if ((_spider.transform.position - _lastWeb.transform.position).magnitude > _spawnRange && _cobwebList[_cobwebID].Cobwebs.Count < _maxAmountOfWeb)
+        if ((_spider.transform.position - _lastWeb.transform.position).magnitude > _spawnRange && _cobwebList[_cobwebID].Cobwebs.Count < _maxAmountOfWeb && _triangles.Count < _maxAmountOfCheckpoint)
+        //if ((_spider.transform.position - _lastWeb.transform.position).magnitude > _spawnRange && _cobwebList[_cobwebID].Cobwebs.Count < _maxAmountOfWeb && _maxTotalOfWeb >_webAmount)
         {
             NewWeb();
             //Debug.Log(_lastWeb.name);
         }
-        else if (_cobwebList[_cobwebID].Cobwebs.Count >= _maxAmountOfWeb && _isTheLast)
+        else if ((_cobwebList[_cobwebID].Cobwebs.Count >= _maxAmountOfWeb && _isTheLast ))
         {
             _isTheLast = !_isTheLast;
             _lastWeb.GetComponent<HingeJoint2D>().enabled = true;
@@ -42,6 +46,7 @@ public class SpawnCobweb : MonoBehaviour
             //_lastWeb.transform.parent = _spider.transform;
             //AddForce();
         }
+        
     }
     public void NewTriangle()
     {
@@ -57,6 +62,8 @@ public class SpawnCobweb : MonoBehaviour
         _lastWeb.GetComponent<CobwebScript>()._id = _webAmount;
         _lastWeb.GetComponent<CobwebScript>()._wire = _cobwebID;
         _webAmount++;
+
+        _triangles.Add(_newWeb);
     }
 
 
@@ -102,6 +109,31 @@ public class SpawnCobweb : MonoBehaviour
         }
     }
 
+    public void SelfDestruct()
+    {
+        for(int _wire = 0; _wire < _cobwebList.Count; _wire++)
+        {
+            for(int _web = 0; _web < _cobwebList[_wire].Cobwebs.Count; _web++)
+            {
+                _cobwebList[_wire].Cobwebs[_web].GetComponent<WebDestroy>().DestroyTheWeb();
+            }
+        }
+
+        for(int _checkpoints = _triangles.Count; _checkpoints > 0; _checkpoints--)
+        {
+            Destroy(_triangles[_checkpoints - 1], .5f);
+        }
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<WebSpawnerp2>().NoWeb();
+
+        StartCoroutine(RefillWeb());
+    }
+
+    IEnumerator RefillWeb()
+    {
+        yield return new WaitForSeconds(.5f);
+        Debug.Log("hi");
+    }
     private void OnDrawGizmos()
     {
         //Gizmos.DrawWireSphere(_spider.transform.position, _spawnRange);

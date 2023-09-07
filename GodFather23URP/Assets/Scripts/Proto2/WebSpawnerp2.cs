@@ -5,7 +5,7 @@ using UnityEngine;
 public class WebSpawnerp2 : MonoBehaviour
 {
     [SerializeField] GameObject _web;
-    GameObject _actualWeb;
+    public GameObject _actualWeb;
     bool _alreadyAWeb;
     void Start()
     {
@@ -27,9 +27,14 @@ public class WebSpawnerp2 : MonoBehaviour
                 _actualWeb.GetComponent<SpawnCobweb>()._cobwebList.Add(new Web());
                 _actualWeb.GetComponent<SpawnCobweb>().NewTriangle();
             }
+
         }
     }
-    
+    public void NoWeb()
+    {
+        _alreadyAWeb = false;
+        Debug.Log(_alreadyAWeb);
+    }
     void NewWeb()
     {
         if (_alreadyAWeb)

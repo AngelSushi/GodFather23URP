@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 0.61345816, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.61345816, b: 0, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -146,8 +146,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cobweb: {fileID: 8513081132476665564, guid: 53b38719066ba024a86a6ad6c9af09d3, type: 3}
   _checkpoint: {fileID: 5038602312748062461, guid: 990e76ca4bee324498d860101b3a6a59, type: 3}
-  _maxAmountOfWeb: 25
-  _spawnRange: 0.1
+  _maxAmountOfWeb: 15
+  _maxTotalOfWeb: 75
+  _maxAmountOfCheckpoint: 8
+  _spawnRange: 0.2
   _spider: {fileID: 0}
   _cobwebList: []
   _triangles: []
