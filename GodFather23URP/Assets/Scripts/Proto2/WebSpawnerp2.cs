@@ -28,6 +28,8 @@ public class WebSpawnerp2 : MonoBehaviour
                 _actualWeb.GetComponent<SpawnCobweb>().NewTriangle();
             }
 
+            //dash
+            StartCoroutine(GetComponent<CharacterMovementp2>().Dash());
         }
         if (Input.GetKeyDown("escape"))
         {

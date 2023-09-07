@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterMovementp2 : MonoBehaviour
 {
     public float _spiderSpeed;
+    float _spiderSpeedBoost;
     Rigidbody2D _rb2d;
     Vector2 _position;
     Vector2 velocity = Vector2.zero;
@@ -16,6 +17,9 @@ public class CharacterMovementp2 : MonoBehaviour
     [SerializeField] private GameObject gfx;
     
     private Animator _animator;
+    [SerializeField] AnimationCurve _dash;
+    [SerializeField] float _dashDuration;
+    [SerializeField] float _dashAmplifier;
     
     void Start()
     {
@@ -35,7 +39,16 @@ public class CharacterMovementp2 : MonoBehaviour
         PlayerMovement();
         
     }
-
+    public IEnumerator Dash()
+    {
+        float _duration = 0;
+        while (_duration < _dashDuration)
+        {
+            _duration += Time.deltaTime;
+            _spiderSpeedBoost = _dash.Evaluate(_duration / _dashDuration) * _dashAmplifier;
+            yield return null;
+        }
+    }
     void PlayerMovement()
     {
         //renvoie la position de la souris en fonction du monde
@@ -48,11 +61,12 @@ public class CharacterMovementp2 : MonoBehaviour
         
         _rb2d.constraints = GameManager._instance.IsInBoss ? RigidbodyConstraints2D.FreezeAll : RigidbodyConstraints2D.FreezeRotation;
 
-        bool isWalking = Mathf.Abs(_direction.x) >= 0.05f || Mathf.Abs(_direction.y) >= 0.05f;
+        bool isWalking = Mathf.Abs(_direction.x) >= 0.15f || Mathf.Abs(_direction.y) >= 0.15f;
         _animator.SetBool("IsWalking",isWalking);
-        
+
+        Debug.Log(_spiderSpeed + _spiderSpeedBoost);
         if ((_mousePosition - transform.position).magnitude > _distanceMin)
-            _rb2d.velocity = _direction * _spiderSpeed;
+            _rb2d.velocity = _direction * (_spiderSpeed + _spiderSpeedBoost);
         else
             _rb2d.velocity = Vector3.zero;
         

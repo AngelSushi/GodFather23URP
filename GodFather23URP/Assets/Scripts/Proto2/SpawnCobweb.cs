@@ -49,7 +49,7 @@ public class SpawnCobweb : MonoBehaviour
         }
         else
         {
-            Debug.Log("here");
+            //Debug.Log("here");
         }
         
     }
