@@ -11,13 +11,21 @@ public class CharacterMovementp2 : MonoBehaviour
 
     [SerializeField] float _distanceMin =.05f;
 
+    private Player player;
 
     [SerializeField] private GameObject gfx;
+    
+    private Animator _animator;
+    
     void Start()
     {
         _rb2d = GetComponent<Rigidbody2D>();
         _position = new Vector2(Camera.main.transform.position.x - Camera.main.pixelWidth/2, Camera.main.transform.position.y - Camera.main.pixelHeight/2);
+
+        _animator = GetComponent<Animator>();
         
+        Debug.Log("rb " + _rb2d);
+       
     }
 
     // Update is called once per frame
@@ -39,7 +47,9 @@ public class CharacterMovementp2 : MonoBehaviour
         //Debug.Log(Mathf.Abs((_mousePosition - transform.position).magnitude));
         
         _rb2d.constraints = GameManager._instance.IsInBoss ? RigidbodyConstraints2D.FreezeAll : RigidbodyConstraints2D.FreezeRotation;
-        
+
+        bool isWalking = Mathf.Abs(_direction.x) >= 0.05f || Mathf.Abs(_direction.y) >= 0.05f;
+        _animator.SetBool("IsWalking",isWalking);
         
         if ((_mousePosition - transform.position).magnitude > _distanceMin)
             _rb2d.velocity = _direction * _spiderSpeed;
@@ -50,8 +60,9 @@ public class CharacterMovementp2 : MonoBehaviour
         {
             float angle = Mathf.Atan2(-_direction.x, _direction.y) * Mathf.Rad2Deg;
             gfx.transform.rotation = Quaternion.Euler(0,0,angle);
+            
         }
-        
+
         //transform.position = Vector2.SmoothDamp(transform.position, _mousePosition, ref velocity, 1/_spiderSpeed);
     }
 }
