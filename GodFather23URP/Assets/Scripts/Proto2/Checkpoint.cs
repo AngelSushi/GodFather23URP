@@ -69,19 +69,23 @@ public class Checkpoint : MonoBehaviour
         foreach (RaycastHit2D hit in hits)
         {
             // Vérifiez si le collider appartient à un autre objet (évite de détecter lui-même).
-            if (hit.collider != null && hit.collider.tag == "Cobweb")
+            if (hit.collider != null)
             {
-                if (hit.collider.GetComponent<CobwebScript>()._wire !=
-                GameObject.FindGameObjectWithTag("Player").GetComponent<WebSpawnerp2>()._actualWeb.GetComponent<SpawnCobweb>()._triangles[GameObject.FindGameObjectWithTag("Player").GetComponent<WebSpawnerp2>()._actualWeb.GetComponent<SpawnCobweb>()._triangles.Count - 2].GetComponent<CobwebScript>()._wire - 1 &&
-                hit.collider.GetComponent<CobwebScript>()._wire !=
-                GameObject.FindGameObjectWithTag("Player").GetComponent<WebSpawnerp2>()._actualWeb.GetComponent<SpawnCobweb>()._triangles[GameObject.FindGameObjectWithTag("Player").GetComponent<WebSpawnerp2>()._actualWeb.GetComponent<SpawnCobweb>()._triangles.Count - 1].GetComponent<CobwebScript>()._wire - 1 &&
-                hit.collider.GetComponent<CobwebScript>()._wire !=
-                GameObject.FindGameObjectWithTag("Player").GetComponent<WebSpawnerp2>()._actualWeb.GetComponent<SpawnCobweb>()._triangles[GameObject.FindGameObjectWithTag("Player").GetComponent<WebSpawnerp2>()._actualWeb.GetComponent<SpawnCobweb>()._triangles.Count - 1].GetComponent<CobwebScript>()._wire
-                )
+                if(hit.collider.tag == "Cobweb")
                 {
-                    GameManager._instance.WebIsFinish();
-                    GameObject.FindGameObjectWithTag("Player").GetComponent<WebSpawnerp2>()._actualWeb.GetComponent<SpawnCobweb>()._maxAmountOfCheckpoint = GameObject.FindGameObjectWithTag("Player").GetComponent<WebSpawnerp2>()._actualWeb.GetComponent<SpawnCobweb>()._triangles.Count;
-                    GameObject.FindGameObjectWithTag("Player").GetComponent<WebSpawnerp2>()._actualWeb.GetComponent<SpawnCobweb>().SelfDestruct();
+                    if (hit.collider.GetComponent<CobwebScript>()._wire !=
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<WebSpawnerp2>()._actualWeb.GetComponent<SpawnCobweb>()._triangles[GameObject.FindGameObjectWithTag("Player").GetComponent<WebSpawnerp2>()._actualWeb.GetComponent<SpawnCobweb>()._triangles.Count - 2].GetComponent<CobwebScript>()._wire - 1 &&
+                    hit.collider.GetComponent<CobwebScript>()._wire !=
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<WebSpawnerp2>()._actualWeb.GetComponent<SpawnCobweb>()._triangles[GameObject.FindGameObjectWithTag("Player").GetComponent<WebSpawnerp2>()._actualWeb.GetComponent<SpawnCobweb>()._triangles.Count - 1].GetComponent<CobwebScript>()._wire - 1 &&
+                    hit.collider.GetComponent<CobwebScript>()._wire !=
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<WebSpawnerp2>()._actualWeb.GetComponent<SpawnCobweb>()._triangles[GameObject.FindGameObjectWithTag("Player").GetComponent<WebSpawnerp2>()._actualWeb.GetComponent<SpawnCobweb>()._triangles.Count - 1].GetComponent<CobwebScript>()._wire
+                    )
+                    {
+                        GameManager._instance.WebIsFinish();
+                        GameObject.FindGameObjectWithTag("Player").GetComponent<WebSpawnerp2>()._actualWeb.GetComponent<SpawnCobweb>()._maxAmountOfCheckpoint = GameObject.FindGameObjectWithTag("Player").GetComponent<WebSpawnerp2>()._actualWeb.GetComponent<SpawnCobweb>()._triangles.Count;
+                        GameObject.FindGameObjectWithTag("Player").GetComponent<WebSpawnerp2>()._actualWeb.GetComponent<SpawnCobweb>().SelfDestruct();
+                    }
+
                 }
 
 

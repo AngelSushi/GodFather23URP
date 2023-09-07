@@ -11,6 +11,10 @@ public class WebDestroy : MonoBehaviour
         _anim = GetComponent<Animator>();
         
     }
+    private void Update()
+    {
+        
+    }
     public void DestroyTheWeb()
     {
         _anim.SetBool("Destroy", true);
