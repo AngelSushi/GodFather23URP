@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 
 public class Player : MonoBehaviour
 {
-    
+
     private void OnCollisionStay2D(Collision2D col)
     {
         if (Input.GetKeyDown(KeyCode.R) && col.gameObject.TryGetComponent(out BossManager bossManager))

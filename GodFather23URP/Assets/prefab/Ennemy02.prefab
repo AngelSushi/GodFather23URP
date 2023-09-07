@@ -363,5 +363,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   life: 3
-  gainTimer: 0
+  gainTimer: 10
   gainScore: 3000
