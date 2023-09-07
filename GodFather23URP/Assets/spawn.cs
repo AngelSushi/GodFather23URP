@@ -87,7 +87,7 @@ public class spawn : MonoBehaviour
             ennemyToSpawn = boss;
             _nextIsBoss = false;
         }
-
+        
         respawn = Instantiate(ennemyToSpawn, spawnPoint.transform.position, spawnPoint.transform.rotation);
         GameManager._instance._listMonster.Add(respawn);
 
@@ -96,6 +96,7 @@ public class spawn : MonoBehaviour
             print(truc);
             print(spawnList.Count);
         }
+        
     }
 
     private IEnumerator spawnTime()
