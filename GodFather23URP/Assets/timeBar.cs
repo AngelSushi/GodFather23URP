@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class timeBar : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class timeBar : MonoBehaviour
     private bool damageActive = false;
 
     public sliderBar slideBar;
+    public GameObject DieMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -70,6 +72,7 @@ public class timeBar : MonoBehaviour
 
     public void Die ()
     {
-
+        DieMenu.SetActive(true);
+        Time.timeScale = 0;
     }
 }
