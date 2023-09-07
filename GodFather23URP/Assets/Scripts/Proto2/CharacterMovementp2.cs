@@ -22,7 +22,7 @@ public class CharacterMovementp2 : MonoBehaviour
         _rb2d = GetComponent<Rigidbody2D>();
         _position = new Vector2(Camera.main.transform.position.x - Camera.main.pixelWidth/2, Camera.main.transform.position.y - Camera.main.pixelHeight/2);
 
-        _animator = GetComponent<Animator>();
+        _animator = GetComponentInChildren<Animator>();
         
         Debug.Log("rb " + _rb2d);
        
