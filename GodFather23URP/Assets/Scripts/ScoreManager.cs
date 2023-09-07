@@ -24,14 +24,6 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    private static ScoreManager _instance;
-
-    public static ScoreManager Instance
-    {
-        get => _instance;
-        set => _instance = value;
-    }
-
     private Dictionary<string, int> playersScore = new Dictionary<string, int>();
 
 
@@ -39,14 +31,6 @@ public class ScoreManager : MonoBehaviour
     private string[] names = { "Amaury", "Ellie", "Bernabé","Flo" };
 
     private int index;
-
-    private void Awake()
-    {
-        if (_instance == null)
-        {
-            _instance = this;
-        }
-    }
 
     private void Update()
     {

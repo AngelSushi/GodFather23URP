@@ -49,9 +49,7 @@ public class BossManager : MonoBehaviour
         get => _isInFight;
         set => _isInFight = true;
     }
-
-    [SerializeField] private float gainTimer;
-    [SerializeField] private int gainScore;
+    
     
     private void Start()
     {
@@ -97,8 +95,7 @@ public class BossManager : MonoBehaviour
         }
         else
         {
-           Debug.Log("il est moooort");
-           ScoreManager.Instance.Score += gainScore;
+           Debug.Log("il est moooort"); 
         }
 
     }
