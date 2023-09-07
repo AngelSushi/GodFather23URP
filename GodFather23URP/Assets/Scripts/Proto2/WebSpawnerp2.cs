@@ -4,24 +4,39 @@ using UnityEngine;
 
 public class WebSpawnerp2 : MonoBehaviour
 {
-    [SerializeField] float _delay = .5f;
-    [SerializeField] Transform _spawnPoint;
     [SerializeField] GameObject _web;
+    GameObject _actualWeb;
+    bool _alreadyAWeb;
     void Start()
     {
-        StartCoroutine(SpawnWeb());
+
     }
 
     void Update()
     {
-    }
+        if (Input.GetKeyDown("space"))
+        {
+            if (!_alreadyAWeb)
+            {
+                _alreadyAWeb = !_alreadyAWeb;
+                NewWeb();
+            }
+            else
+            {
 
-    IEnumerator SpawnWeb()
+                _actualWeb.GetComponent<SpawnCobweb>()._cobwebList.Add(new Web());
+                _actualWeb.GetComponent<SpawnCobweb>().NewTriangle();
+            }
+        }
+    }
+    
+    void NewWeb()
     {
-        yield return new WaitForSeconds(_delay);
-        GameObject _newWeb = Instantiate(_web, _spawnPoint.position,Quaternion.identity);
-        //_newWeb.transform.LookAt(transform);
-        _newWeb.GetComponent<HingeJoint2D>().connectedBody = GetComponent<Rigidbody2D>();
-    }
+        if (_alreadyAWeb)
+        {
+            _actualWeb = Instantiate(_web, transform.position, Quaternion.identity);
+            _actualWeb.GetComponent<SpawnCobweb>()._cobwebList.Add(new Web());
+        }
 
+    }
 }
