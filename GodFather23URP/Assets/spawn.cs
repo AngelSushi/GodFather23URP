@@ -102,7 +102,7 @@ public class spawn : MonoBehaviour
 
             scale = new Vector3(scaleX, scaleY, scale.z);
         }
-
+        
         respawn = Instantiate(ennemyToSpawn, spawnPoint.transform.position, spawnPoint.transform.rotation);
         GameManager._instance._listMonster.Add(respawn);
         respawn.transform.localScale = scale;
@@ -113,6 +113,7 @@ public class spawn : MonoBehaviour
             print(truc);
             print(spawnList.Count);
         }
+        
     }
 
     private IEnumerator spawnTime()

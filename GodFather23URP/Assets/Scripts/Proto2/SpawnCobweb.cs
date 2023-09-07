@@ -26,7 +26,7 @@ public class SpawnCobweb : MonoBehaviour
     void Update()
     {
         //Debug.Log((_spider.transform.position - transform.position).magnitude);
-        Debug.Log("cobweb id : " + _cobwebID + " cobweb count : " + _cobwebList[_cobwebID].Cobwebs.Count);
+        //Debug.Log("cobweb id : " + _cobwebID + " cobweb count : " + _cobwebList[_cobwebID].Cobwebs.Count);
         if ((_spider.transform.position - _lastWeb.transform.position).magnitude > _spawnRange && _cobwebList[_cobwebID].Cobwebs.Count < _maxAmountOfWeb)
         {
             NewWeb();
@@ -90,15 +90,6 @@ public class SpawnCobweb : MonoBehaviour
             // Appliquez la rotation pour orienter l'objet vers la cible
             _transform.rotation = Quaternion.Euler(new Vector3(0, 0,_angle - 90));
         }
-    }
-
-    void AddForce()
-    {
-        Vector2 direction = (_lastWeb.transform.position - _spider.transform.position).normalized;
-
-        // Appliquez la vélocité pour se déplacer vers la cible
-        _lastWeb.GetComponent<Rigidbody2D>().velocity = direction * -1 * _spider.GetComponent<CharacterMovementp2>()._spiderSpeed;
-
     }
 
     private void OnDrawGizmos()
