@@ -485,5 +485,3 @@ MonoBehaviour:
   spawnList: []
   spawnCooldown: 3
   Cooldown: 1
-  bossAmplifier: 0
-  maxBossSize: 0
