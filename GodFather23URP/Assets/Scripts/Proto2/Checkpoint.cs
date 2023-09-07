@@ -10,12 +10,12 @@ public class Checkpoint : MonoBehaviour
     {
         if(_collision.tag == "Cobweb")
         {
-            Debug.Log("wire : " + _collision.GetComponent<CobwebScript>()._wire + " checkpoint : " + GetComponent<CobwebScript>()._wire);
+            //Debug.Log("wire : " + _collision.GetComponent<CobwebScript>()._wire + " checkpoint : " + GetComponent<CobwebScript>()._wire);
             if (GetComponent<CobwebScript>()._wire != _collision.GetComponent<CobwebScript>()._wire &&
                 GetComponent<CobwebScript>()._wire != _collision.GetComponent<CobwebScript>()._wire + 1 &&
                 GetComponent<CobwebScript>()._wire != _collision.GetComponent<CobwebScript>()._wire - 1)
             {
-                Debug.Log(_collision.GetComponent<CobwebScript>()._wire);
+                GameManager._instance.WebIsFinish();
             }
         }
         //Debug.Log(_collision.GetComponent<CobwebScript>()._wire);
