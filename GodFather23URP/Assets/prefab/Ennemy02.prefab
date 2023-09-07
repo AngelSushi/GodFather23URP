@@ -233,7 +233,6 @@ GameObject:
   - component: {fileID: 9139875629378700342}
   - component: {fileID: 9139875629378700337}
   - component: {fileID: 4417372397560662790}
-  - component: {fileID: 7274623797748892487}
   m_Layer: 0
   m_Name: Ennemy02
   m_TagString: Untagged
@@ -323,16 +322,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 1000
---- !u!114 &7274623797748892487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9139875629378700339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abbeec29b766e0e45ae17a97b209a588, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: 3
