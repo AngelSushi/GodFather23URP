@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 3147031908247251619}
   - component: {fileID: 3147031908247251620}
   - component: {fileID: 3147031908247251621}
-  m_Layer: 0
+  - component: {fileID: -3057677113819178410}
+  m_Layer: 3
   m_Name: Spider
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -135,3 +136,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _web: {fileID: 4406446046011741821, guid: 4bfff749cdf54ae47977c7fa334f85c1, type: 3}
+--- !u!58 &-3057677113819178410
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3147031908247251618}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.49999997
