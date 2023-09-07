@@ -12,6 +12,10 @@ public class GameManager : MonoBehaviour
         _instance = this;
     }
 
+    //quand on fini un cercle complet
+    public void WebIsFinish()
+    {
 
+    }
 
 }
