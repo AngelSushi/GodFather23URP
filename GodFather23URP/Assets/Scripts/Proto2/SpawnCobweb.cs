@@ -16,6 +16,7 @@ public class SpawnCobweb : MonoBehaviour
     int _cobwebID = 0;
     public List<GameObject> _triangles = new List<GameObject>();
 
+    int _webAmount;
     void Start()
     {
         _spider = GameObject.FindGameObjectWithTag("Player");
@@ -26,7 +27,7 @@ public class SpawnCobweb : MonoBehaviour
     void Update()
     {
         //Debug.Log((_spider.transform.position - transform.position).magnitude);
-        //Debug.Log("cobweb id : " + _cobwebID + " cobweb count : " + _cobwebList[_cobwebID].Cobwebs.Count);
+        //Debug.Log("cobweb id : " + _cobwebID + " cobweb count : " + _cobwebList[_cobwebID].Cobwebs.Count);-
         if ((_spider.transform.position - _lastWeb.transform.position).magnitude > _spawnRange && _cobwebList[_cobwebID].Cobwebs.Count < _maxAmountOfWeb)
         {
             NewWeb();
@@ -52,6 +53,10 @@ public class SpawnCobweb : MonoBehaviour
 
         _lastWeb.GetComponent<HingeJoint2D>().connectedBody = _newWeb.GetComponent<Rigidbody2D>();
         _lastWeb = _newWeb;
+
+        _lastWeb.GetComponent<CobwebScript>()._id = _webAmount;
+        _lastWeb.GetComponent<CobwebScript>()._wire = _cobwebID;
+        _webAmount++;
     }
 
 
@@ -72,6 +77,11 @@ public class SpawnCobweb : MonoBehaviour
             GetComponent<HingeJoint2D>().connectedBody = _newWeb.GetComponent<Rigidbody2D>();
             _lastWeb = _newWeb;
         }
+        //on rajoute un ID au cobew
+        _lastWeb.GetComponent<CobwebScript>()._id = _webAmount;
+        _lastWeb.GetComponent<CobwebScript>()._wire = _cobwebID;
+        _webAmount++;
+
 
         Rotation(_lastWeb.transform);
         _cobwebList[_cobwebID].Cobwebs.Add(_lastWeb);

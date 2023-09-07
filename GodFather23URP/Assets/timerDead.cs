@@ -26,4 +26,11 @@ public class timerDead : MonoBehaviour
         StartCoroutine(endTimer());
     }
 
+    public bool DoIMDead()
+    {
+
+
+        return true;
+    }
+
 }

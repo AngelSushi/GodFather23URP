@@ -8,10 +8,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
+  - Player
   - Outline
   - Water
   - UI
   - Enemy
+  - Cobweb
+  - CheckPoint
   - 
   - 
   - 
