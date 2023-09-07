@@ -34,7 +34,7 @@ public class spawn : MonoBehaviour
     void Update()
     {
         
-        if (Cooldown)
+        if (Cooldown && !GameManager._instance.IsInBoss)
         {
             random();
         }
@@ -91,12 +91,6 @@ public class spawn : MonoBehaviour
         respawn = Instantiate(ennemyToSpawn, spawnPoint.transform.position, spawnPoint.transform.rotation);
         GameManager._instance._listMonster.Add(respawn);
 
-        foreach (Vector2 truc in spawnList)
-        {
-            print(truc);
-            print(spawnList.Count);
-        }
-        
     }
 
     private IEnumerator spawnTime()
