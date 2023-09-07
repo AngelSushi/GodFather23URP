@@ -13,6 +13,11 @@ public class CobwebScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D _collision)
     {
-        Debug.Log(_collision.collider.name);
+        if(_collision.collider.tag == "Cobweb")
+        {
+            Debug.Log(_collision.collider.GetComponent<CobwebScript>()._id);
+                
+        }
+        //Debug.Log(_collision.collider.name);
     }
 }
