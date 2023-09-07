@@ -7,6 +7,16 @@ public class GameManager : MonoBehaviour
 
     public static GameManager _instance;
     public List<GameObject> _listMonster;
+
+    private bool _isInBoss;
+
+    public bool IsInBoss
+    {
+        get => _isInBoss;
+        set => _isInBoss = value;
+    }
+    
+    
     private void Awake()
     {
         _instance = this;

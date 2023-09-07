@@ -97,7 +97,8 @@ public class FormTest : MonoBehaviour
                 {
                     Debug.Log("win");
                     gameObject.SetActive(false);
-                    
+                    FindObjectsOfType<BossManager>().First(boss => boss.IsInFight).OnFormFinished?.Invoke(this,new BossManager.OnFormFinishedArgs(gameObject));
+
                 }
                 else
                 {
