@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1103920486813706848}
   - component: {fileID: 523289102871698511}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8513081132394981889}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: NextWebPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 8513081132476665537}
   - component: {fileID: 8513081132476665542}
   - component: {fileID: 3186780489834759471}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cobweb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,3 +226,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pivot: {fileID: 8513081132394981889}
+  _id: 0
