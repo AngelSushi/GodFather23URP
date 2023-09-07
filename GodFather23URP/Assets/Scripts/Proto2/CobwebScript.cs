@@ -10,7 +10,7 @@ public class CobwebScript : MonoBehaviour
     {
 
     }
-
+    /*
     private void OnCollisionEnter2D(Collision2D _collision)
     {
         if(_collision.collider.tag == "Cobweb")
@@ -20,4 +20,5 @@ public class CobwebScript : MonoBehaviour
         }
         //Debug.Log(_collision.collider.name);
     }
+    */
 }
