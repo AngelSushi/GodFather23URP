@@ -53,6 +53,10 @@ public class SpawnCobweb : MonoBehaviour
 
         _lastWeb.GetComponent<HingeJoint2D>().connectedBody = _newWeb.GetComponent<Rigidbody2D>();
         _lastWeb = _newWeb;
+
+        _lastWeb.GetComponent<CobwebScript>()._id = _webAmount;
+        _lastWeb.GetComponent<CobwebScript>()._wire = _cobwebID;
+        _webAmount++;
     }
 
 
@@ -75,7 +79,9 @@ public class SpawnCobweb : MonoBehaviour
         }
         //on rajoute un ID au cobew
         _lastWeb.GetComponent<CobwebScript>()._id = _webAmount;
+        _lastWeb.GetComponent<CobwebScript>()._wire = _cobwebID;
         _webAmount++;
+
 
         Rotation(_lastWeb.transform);
         _cobwebList[_cobwebID].Cobwebs.Add(_lastWeb);

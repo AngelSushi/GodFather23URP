@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 5038602312748062439}
   - component: {fileID: 239109913805359831}
   - component: {fileID: 7580251844406746223}
-  m_Layer: 0
+  - component: {fileID: 7335570811112775946}
+  - component: {fileID: 1962138510945984702}
+  m_Layer: 8
   m_Name: Checkpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,6 +148,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pivot: {fileID: 6156638986144278221}
+  _id: 0
+  _wire: 0
+--- !u!58 &7335570811112775946
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5038602312748062461}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!114 &1962138510945984702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5038602312748062461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c9be302b89ad364794b88d0fe062080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8152264102545444467
 GameObject:
   m_ObjectHideFlags: 0

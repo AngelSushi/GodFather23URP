@@ -6,6 +6,7 @@ public class CobwebScript : MonoBehaviour
 {
     public Transform _pivot;
     public int _id;
+    public int _wire;
     void Start()
     {
 

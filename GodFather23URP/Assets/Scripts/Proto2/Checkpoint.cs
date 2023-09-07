@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+
+    private void OnTriggerEnter2D(Collider2D _collision)
     {
+        if(_collision.tag == "Cobweb")
+        {
+            Debug.Log("wire : " + _collision.GetComponent<CobwebScript>()._wire + " checkpoint : " + GetComponent<CobwebScript>()._wire);
+            if (GetComponent<CobwebScript>()._wire != _collision.GetComponent<CobwebScript>()._wire &&
+                GetComponent<CobwebScript>()._wire != _collision.GetComponent<CobwebScript>()._wire + 1 &&
+                GetComponent<CobwebScript>()._wire != _collision.GetComponent<CobwebScript>()._wire - 1)
+            {
+                Debug.Log(_collision.GetComponent<CobwebScript>()._wire);
+            }
+        }
+        //Debug.Log(_collision.GetComponent<CobwebScript>()._wire);
+
         
     }
 }
