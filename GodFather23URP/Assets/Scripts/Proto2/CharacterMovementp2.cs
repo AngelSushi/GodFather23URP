@@ -61,8 +61,7 @@ public class CharacterMovementp2 : MonoBehaviour
 
         bool isWalking = Mathf.Abs(_direction.x) >= 0.15f || Mathf.Abs(_direction.y) >= 0.15f;
         _animator.SetBool("IsWalking",isWalking);
-
-        Debug.Log(_spiderSpeed + _spiderSpeedBoost);
+        
         if ((_mousePosition - transform.position).magnitude > _distanceMin)
             _rb2d.velocity = _direction * (_spiderSpeed + _spiderSpeedBoost);
         else

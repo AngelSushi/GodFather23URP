@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using Random = UnityEngine.Random;
 
 public class BossManager : MonoBehaviour
@@ -36,7 +37,6 @@ public class BossManager : MonoBehaviour
     public EventHandler<OnFormBeginArgs> OnFormBegin;
 
     
-    private List<FormTest> _allForms;
     private FormTest _current;
     
     
@@ -60,8 +60,6 @@ public class BossManager : MonoBehaviour
         OnFormFinished += OnFormFinishedFunc;
         OnFormBegin += OnFormBeginFunc;
         maxLife = life; 
-        _allForms = FindObjectsOfType<FormTest>().ToList();
-        _allForms.ForEach(form => form.transform.parent.parent.gameObject.SetActive(false));
     }
 
     private void OnDisable()
@@ -72,7 +70,6 @@ public class BossManager : MonoBehaviour
 
     private void OnFormBeginFunc(object sender, OnFormBeginArgs e)
     {
-        Debug.Log("on form begin");
 
         IsInFight = true;
         RandomPattern();
@@ -80,7 +77,6 @@ public class BossManager : MonoBehaviour
 
     private void OnFormFinishedFunc(object sender,OnFormFinishedArgs e)
     {
-        Debug.Log("on form finished");
         
         if (!IsInFight)
         {
@@ -90,6 +86,11 @@ public class BossManager : MonoBehaviour
         StopAllCoroutines();
         
         life--;
+
+        Debug.Log("size " + _current.transform.parent.GetChild(4).gameObject.name);
+        
+        GetComponent<Animator>().SetInteger("State",life);
+
         Mathf.Clamp(life, 0, maxLife);
         _current = null;
 
@@ -103,6 +104,7 @@ public class BossManager : MonoBehaviour
         {
             music.clip = musics[2]; // musique
             music.Play();
+            Destroy(FindObjectOfType<Player>().collideBoss);
             Debug.Log("il est moooort"); 
         }
 
@@ -110,15 +112,16 @@ public class BossManager : MonoBehaviour
 
     public void RandomPattern()
     {
-        int random = Random.Range(0, _allForms.Count - 1);
-        _current = _allForms[random];
-        
-        Debug.Log("random " + _current.gameObject.name);
+        int random = Random.Range(0, GameManager._instance._allForms.Count - 1);
+        _current = GameManager._instance._allForms[random];
         
         SetLightEnabled(_current.gameObject,true);
         _current.transform.parent.parent.gameObject.SetActive(true);
         _current.transform.parent.parent.GetChild(_current.transform.parent.parent.childCount -1).gameObject.SetActive(true);
         GameManager._instance.IsInBoss = true;
+
+
+        _current.trailRenderer.transform.position = _current.transform.parent.parent.GetChild(0).position;
         
         _previewIndex = 0;
 
@@ -134,11 +137,12 @@ public class BossManager : MonoBehaviour
     
     private IEnumerator WaitPreviewEnd()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
 
         if (_current != null)
         {
             _current.transform.parent.parent.GetChild(_previewIndex).GetComponent<Animator>().enabled = false;
+            _current.transform.parent.parent.GetChild(_previewIndex).GetComponent<Light2D>().pointLightOuterRadius = 0f;
             _previewIndex++;
 
             if (_previewIndex >= _current.transform.parent.parent.childCount - 1)
