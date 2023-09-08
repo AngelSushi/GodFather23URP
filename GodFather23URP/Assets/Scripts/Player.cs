@@ -9,12 +9,15 @@ using Random = UnityEngine.Random;
 public class Player : MonoBehaviour
 {
 
+    public GameObject collideBoss;
+    
     private void OnCollisionStay2D(Collision2D col)
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
             if (col.gameObject.TryGetComponent(out BossManager bossManager) && !GameManager._instance.IsInBoss)
             {
+                collideBoss = col.gameObject;
                 bossManager.music.clip = bossManager.musics[0];
                 bossManager.music.Play();
                 StartCoroutine(WaitMusic(bossManager));
