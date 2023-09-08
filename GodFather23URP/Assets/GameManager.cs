@@ -70,6 +70,10 @@ public class GameManager : MonoBehaviour
         int _multiplier = 0;
         for(int _loop = 0; _loop < _listMonster.Count; _loop++)
         {
+            if(_listMonster[_loop] == null)
+            {
+                _listMonster.RemoveAt(_loop);
+            }
             bool _combo = _listMonster[_loop].GetComponent<timerDead>().DoIMDead();
             if (_combo)
             {
