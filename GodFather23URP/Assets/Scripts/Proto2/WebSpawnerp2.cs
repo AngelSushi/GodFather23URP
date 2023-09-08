@@ -7,6 +7,8 @@ public class WebSpawnerp2 : MonoBehaviour
     [SerializeField] GameObject _web;
     public GameObject _actualWeb;
     bool _alreadyAWeb;
+
+    private
     void Start()
     {
 
