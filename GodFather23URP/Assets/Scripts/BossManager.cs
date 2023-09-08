@@ -73,7 +73,6 @@ public class BossManager : MonoBehaviour
 
     private void OnFormBeginFunc(object sender, OnFormBeginArgs e)
     {
-        Debug.Log("on form begin");
 
         IsInFight = true;
         RandomPattern();
@@ -81,7 +80,6 @@ public class BossManager : MonoBehaviour
 
     private void OnFormFinishedFunc(object sender,OnFormFinishedArgs e)
     {
-        Debug.Log("on form finished");
         
         if (!IsInFight)
         {
@@ -119,8 +117,6 @@ public class BossManager : MonoBehaviour
     {
         int random = Random.Range(0, _allForms.Count - 1);
         _current = _allForms[random];
-        
-        Debug.Log("random " + _current.gameObject.name);
         
         SetLightEnabled(_current.gameObject,true);
         _current.transform.parent.parent.gameObject.SetActive(true);

@@ -85,7 +85,7 @@ public class FormTest : MonoBehaviour
         {
             if (_points.Count != models.Count)
             {
-                Debug.Log("loose");
+                Debug.Log("loose " + (_points.Count + "/" + models.Count));
                 BossManager boss = FindObjectsOfType<BossManager>().First(boss => boss.IsInFight);
 
                 boss.sound.clip = boss.sounds[0];
@@ -96,6 +96,14 @@ public class FormTest : MonoBehaviour
                 bool goodPath = true;
                 int modelCount = models.Count;
                 int pointCOunt = _points.Count;
+                
+                
+                Debug.Log("========================================");
+                foreach (GameObject obj in _points)
+                {
+                    Debug.Log("objName " + obj.name);
+                }
+                Debug.Log("========================================");
                 
                 for (int i = 0; i < _points.Count; i++)
                 {
@@ -117,7 +125,7 @@ public class FormTest : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("loose");
+                    Debug.Log("loose " + (pointCOunt + "/" +  modelCount));
                     BossManager boss = FindObjectsOfType<BossManager>().First(boss => boss.IsInFight);
                     boss.sound.clip = boss.sounds[0];
                     boss.sound.Play();
