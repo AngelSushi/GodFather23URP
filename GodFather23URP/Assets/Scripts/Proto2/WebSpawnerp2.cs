@@ -17,7 +17,7 @@ public class WebSpawnerp2 : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetMouseButtonDown(0))
         {
             if (!_alreadyAWeb)
             {
@@ -36,7 +36,7 @@ public class WebSpawnerp2 : MonoBehaviour
             //dash
             StartCoroutine(GetComponent<CharacterMovementp2>().Dash());
         }
-        if (Input.GetKeyDown("escape"))
+        if (Input.GetMouseButtonDown(2))
         {
             _actualWeb.GetComponent<SpawnCobweb>().SelfDestruct();
             _actualWeb.GetComponent<SpawnCobweb>()._isDead = false;
