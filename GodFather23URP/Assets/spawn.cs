@@ -11,9 +11,9 @@ public class spawn : MonoBehaviour
     public float size;
 
     [SerializeField] private List<GameObject> insectsPrefab;
-    [SerializeField] public GameObject boss;
+    [SerializeField] private GameObject boss;
     [SerializeField] private float bossTimer;
-    public bool _nextIsBoss;
+    private bool _nextIsBoss;
     
     public GameObject spawnPoint;
     public GameObject respawn;

@@ -54,18 +54,7 @@ public class GameManager : MonoBehaviour
     }
 
     public GameObject deadAnim;
-
-    public List<FormTest> _allForms;
-    private void Start()
-    {
-        
-        _allForms = FindObjectsOfType<FormTest>().ToList();
-        
-        Debug.Log("list " + _allForms.Count);
-        
-        _allForms.ForEach(form => form.transform.parent.parent.gameObject.SetActive(false));
-    }
-
+    
     private void Awake()
     {
         _instance = this;
@@ -107,7 +96,7 @@ public class GameManager : MonoBehaviour
         float comboMultiplier = combo == null ? combos.Last().Combo : combo.Combo;
 
         FindObjectOfType<ScoreManager>().Score =FindObjectOfType<ScoreManager>().Score + ((int)((pointEat * _multiplier) * comboMultiplier));
-        FindObjectOfType<Main_music>().Eat();
+
         
         
         
