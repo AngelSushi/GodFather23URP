@@ -8,6 +8,7 @@ public class maineMenu : MonoBehaviour
     public string levelToLoad;
 
     public GameObject settingsWindow;
+    public GameObject scoresBoardWindow;
 
     public void StartGame()
     {
@@ -22,6 +23,16 @@ public class maineMenu : MonoBehaviour
     public void CloseSettingsWindow()
     {
         settingsWindow.SetActive(false);
+    }
+
+    public void OpenScoresBoard()
+    {
+        scoresBoardWindow.SetActive(true);
+    }
+
+    public void CloseScoresBoard()
+    {
+        scoresBoardWindow.SetActive(false);
     }
 
     public void QuitGame()

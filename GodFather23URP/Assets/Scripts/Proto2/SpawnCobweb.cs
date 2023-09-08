@@ -55,6 +55,9 @@ public class SpawnCobweb : MonoBehaviour
         {
             //Debug.Log("here");
         }
+
+        if(_cobwebList[_cobwebList.Count - 1].Cobwebs.Count > 2 )
+            ShouldWeCutTheWire();
         
     }
     public void NewTriangle()
@@ -137,6 +140,36 @@ public class SpawnCobweb : MonoBehaviour
         audiosource_webdestroy.PlayOneShot(webdestroy);
     }
 
+
+    void ShouldWeCutTheWire()
+    {
+        //Debug.Log("yo");
+        GameObject _lastWeb = _cobwebList[_cobwebList.Count - 1].Cobwebs[_cobwebList[_cobwebList.Count - 1].Cobwebs.Count - 1];
+        GameObject _beforeLastWeb = _cobwebList[_cobwebList.Count - 1].Cobwebs[_cobwebList[_cobwebList.Count - 1].Cobwebs.Count - 2];
+        RaycastHit2D[] hits = Physics2D.RaycastAll(_beforeLastWeb.transform.position, (_beforeLastWeb.transform.position - _lastWeb.transform.position).normalized, (_beforeLastWeb.transform.position-_lastWeb.transform.position).magnitude * 2);
+        //Debug.Log("center : " + _lastWeb.transform.position + " direction : " + _lastWeb.transform.forward + " distance : " + (_lastWeb.transform.position - _cobwebList[_cobwebList.Count-1].Cobwebs[_cobwebList[_cobwebList.Count-1].Cobwebs.Count - 2].transform.position).magnitude);
+        // Parcourez toutes les collisions détectées.
+        foreach (RaycastHit2D hit in hits)
+        {
+            // Vérifiez si le collider appartient à un autre objet (évite de détecter lui-même).
+            if (hit.collider != null)
+            {
+                if (hit.collider.tag == "Cobweb")
+                {
+                    if(hit.collider.GetComponent<CobwebScript>()._wire != _lastWeb.GetComponent<CobwebScript>()._wire &&
+                        hit.collider.GetComponent<CobwebScript>()._wire + 1 != _lastWeb.GetComponent<CobwebScript>()._wire)
+                    {
+                        //Debug.Log("wire : " + hit.collider.GetComponent<CobwebScript>()._wire);
+                        //GameObject.FindGameObjectWithTag("Player").GetComponent<WebSpawnerp2>()._actualWeb.GetComponent<>
+                        SelfDestruct();
+                    }
+
+                }
+
+
+            }
+        }
+    }
 
     private void OnDrawGizmos()
     {

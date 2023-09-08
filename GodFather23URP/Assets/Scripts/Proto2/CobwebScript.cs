@@ -22,4 +22,10 @@ public class CobwebScript : MonoBehaviour
         //Debug.Log(_collision.collider.name);
     }
     */
+
+    private void Update()
+    {
+        
+    }
+
 }

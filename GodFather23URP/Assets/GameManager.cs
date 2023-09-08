@@ -103,9 +103,5 @@ public class GameManager : MonoBehaviour
         Debug.Log("combo de : " + _multiplier + " insectes");
     }
 
-    public void SpawnEnemy(GameObject _enemy, Vector2 _pos)
-    {
-        GameObject _newEnemy = Instantiate(_enemy, new Vector3(_pos.x,_pos.y,8), Quaternion.identity);
-        _listMonster.Add(_newEnemy);
-    }
+
 }
