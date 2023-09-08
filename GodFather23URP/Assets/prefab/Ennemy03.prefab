@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 922076076115386507}
   - component: {fileID: 922076076115386500}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 922076076307444408}
   - component: {fileID: 922076076307444409}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 3404911330805202271}
   - component: {fileID: 3712146396548880911}
   - component: {fileID: 5441144718636923891}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ennemy03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +360,7 @@ MonoBehaviour:
   canBeStun: 1
   isStunned: 0
   stunTimer: 2
-  respawnStunTimer: 0
+  respawnStunTimer: 5
 --- !u!95 &3712146396548880911
 Animator:
   serializedVersion: 5

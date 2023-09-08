@@ -37,7 +37,6 @@ public class BossManager : MonoBehaviour
     public EventHandler<OnFormBeginArgs> OnFormBegin;
 
     
-    private List<FormTest> _allForms;
     private FormTest _current;
     
     
@@ -61,8 +60,6 @@ public class BossManager : MonoBehaviour
         OnFormFinished += OnFormFinishedFunc;
         OnFormBegin += OnFormBeginFunc;
         maxLife = life; 
-        _allForms = FindObjectsOfType<FormTest>().ToList();
-        _allForms.ForEach(form => form.transform.parent.parent.gameObject.SetActive(false));
     }
 
     private void OnDisable()
@@ -115,8 +112,8 @@ public class BossManager : MonoBehaviour
 
     public void RandomPattern()
     {
-        int random = Random.Range(0, _allForms.Count - 1);
-        _current = _allForms[random];
+        int random = Random.Range(0, GameManager._instance._allForms.Count - 1);
+        _current = GameManager._instance._allForms[random];
         
         SetLightEnabled(_current.gameObject,true);
         _current.transform.parent.parent.gameObject.SetActive(true);
