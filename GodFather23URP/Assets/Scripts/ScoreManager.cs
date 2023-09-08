@@ -19,8 +19,9 @@ public class ScoreManager : MonoBehaviour
         get => score;
         set
         {
+            Debug.Log("value " + value);
             score = value;
-            scoreText.text = score.ToString();
+            scoreText.text = value.ToString();
         }
     }
 
@@ -41,7 +42,7 @@ public class ScoreManager : MonoBehaviour
                 return;
             }
             
-            OnSaveData(names[index],Random.Range(0,100));
+            //OnSaveData(names[index],Random.Range(0,100));
             index++;
         }
 

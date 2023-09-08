@@ -11,6 +11,7 @@ public class timerDead : MonoBehaviour
     void Start()
     {
         StartCoroutine(endTimer());
+        GameManager._instance._listMonster.Add(gameObject);
     }
 
     private IEnumerator endTimer()
@@ -30,55 +31,56 @@ public class timerDead : MonoBehaviour
     {
         Vector2 origin = transform.position;
         int _side = 0;
-        // Calculez la direction du rayon vers la gauche (négatif de l'axe X).
+        // Calculez la direction du rayon vers la gauche (nï¿½gatif de l'axe X).
         Vector2 _directionLeft = Vector2.left;
         Vector2 _directionRight = Vector2.right;
         Vector2 _directionUp = Vector2.up;
         Vector2 _directionDown = Vector2.down;
 
         // Effectuez le raycast 2D.
-        RaycastHit2D[] _hitsLeft = Physics2D.RaycastAll(origin, _directionLeft, 100);
-        RaycastHit2D[] _hitsRight = Physics2D.RaycastAll(origin, _directionRight, 100);
-        RaycastHit2D[] _hitsUp = Physics2D.RaycastAll(origin, _directionUp, 100);
-        RaycastHit2D[] _hitsDown = Physics2D.RaycastAll(origin, _directionDown, 100);
+        RaycastHit2D[] _hitsLeft = Physics2D.RaycastAll(origin, _directionLeft, 100, 1 << 7);
+        RaycastHit2D[] _hitsRight = Physics2D.RaycastAll(origin, _directionRight, 100, 1 << 7);
+        RaycastHit2D[] _hitsUp = Physics2D.RaycastAll(origin, _directionUp, 100, 1 << 7 );
+        RaycastHit2D[] _hitsDown = Physics2D.RaycastAll(origin, _directionDown, 100, 1 << 7);
 
-        // Parcourez toutes les collisions détectées.
+        // Parcourez toutes les collisions dï¿½tectï¿½es.
         foreach (RaycastHit2D hit in _hitsLeft)
         {
-            // Vérifiez si le collider appartient à un autre objet (évite de détecter lui-même).
+            // Vï¿½rifiez si le collider appartient ï¿½ un autre objet (ï¿½vite de dï¿½tecter lui-mï¿½me).
             if (hit.collider != null && hit.collider.gameObject != gameObject)
             {
-                Debug.Log("Objet à gauche : " + hit.collider.gameObject.name);
+                Debug.Log(hit.collider.gameObject.layer);
+                Debug.Log("Objet ï¿½ gauche : " + hit.collider.gameObject.name);
                 _side++;
                 break;
             }
         }
         foreach (RaycastHit2D hit in _hitsRight)
         {
-            // Vérifiez si le collider appartient à un autre objet (évite de détecter lui-même).
+            // Vï¿½rifiez si le collider appartient ï¿½ un autre objet (ï¿½vite de dï¿½tecter lui-mï¿½me).
             if (hit.collider != null && hit.collider.gameObject != gameObject)
             {
-                Debug.Log("Objet à droite : " + hit.collider.gameObject.name);
+                Debug.Log("Objet ï¿½ droite : " + hit.collider.gameObject.name);
                 _side++;
                 break;
             }
         }
         foreach (RaycastHit2D hit in _hitsUp)
         {
-            // Vérifiez si le collider appartient à un autre objet (évite de détecter lui-même).
+            // Vï¿½rifiez si le collider appartient ï¿½ un autre objet (ï¿½vite de dï¿½tecter lui-mï¿½me).
             if (hit.collider != null && hit.collider.gameObject != gameObject)
             {
-                Debug.Log("Objet à haut : " + hit.collider.gameObject.name);
+                Debug.Log("Objet ï¿½ haut : " + hit.collider.gameObject.name);
                 _side++;
                 break;
             }
         }
         foreach (RaycastHit2D hit in _hitsDown)
         {
-            // Vérifiez si le collider appartient à un autre objet (évite de détecter lui-même).
+            // Vï¿½rifiez si le collider appartient ï¿½ un autre objet (ï¿½vite de dï¿½tecter lui-mï¿½me).
             if (hit.collider != null && hit.collider.gameObject != gameObject)
             {
-                Debug.Log("Objet à bas : " + hit.collider.gameObject.name);
+                Debug.Log("Objet ï¿½ bas : " + hit.collider.gameObject.name);
                 _side++;
                 break;
             }
