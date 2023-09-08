@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     
     private void OnCollisionStay2D(Collision2D col)
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetMouseButton(0))
         {
             if (col.gameObject.TryGetComponent(out BossManager bossManager) && !GameManager._instance.IsInBoss)
             {
@@ -25,6 +25,19 @@ public class Player : MonoBehaviour
             }
             
         }
+
+     /*   if (Input.GetMouseButton(2) && GameManager._instance.IsInBoss)
+        {
+            if (col.gameObject.TryGetComponent(out BossManager bossManager))
+            {
+                
+                GameManager._instance.IsInBoss = false;
+                bossManager._current.gameObject.transform.parent.parent.gameObject.SetActive(false);
+            }
+
+
+        }
+        */
     }
 
     private IEnumerator WaitMusic(BossManager bossManager)

@@ -37,7 +37,7 @@ public class BossManager : MonoBehaviour
     public EventHandler<OnFormBeginArgs> OnFormBegin;
 
     
-    private FormTest _current;
+    public FormTest _current;
     
     
     private int _previewIndex;
@@ -74,6 +74,8 @@ public class BossManager : MonoBehaviour
         IsInFight = true;
         RandomPattern();
     }
+    
+    
 
     private void OnFormFinishedFunc(object sender,OnFormFinishedArgs e)
     {
@@ -105,6 +107,7 @@ public class BossManager : MonoBehaviour
             music.clip = musics[2]; // musique
             music.Play();
             Destroy(FindObjectOfType<Player>().collideBoss);
+            GameManager._instance.IsInBoss = false;
             Debug.Log("il est moooort"); 
         }
 

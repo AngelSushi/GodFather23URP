@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WebSpawnerp2 : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class WebSpawnerp2 : MonoBehaviour
     public GameObject _actualWeb;
     bool _alreadyAWeb;
 
+    public Slider slider;
     void Start()
     {
         audiosource_spiderman = GetComponent<AudioSource>();
@@ -17,6 +19,17 @@ public class WebSpawnerp2 : MonoBehaviour
 
     void Update()
     {
+        if (_actualWeb != null)
+        {
+            Debug.Log(_actualWeb.GetComponent<SpawnCobweb>()._cobwebList.Count);
+            Debug.Log(_actualWeb.GetComponent<SpawnCobweb>()._maxTotalOfWeb);
+            Debug.Log("size " + (_actualWeb.GetComponent<SpawnCobweb>()._cobwebList.Count / _actualWeb.GetComponent<SpawnCobweb>()._maxTotalOfWeb));
+            
+            slider.value = (float) (_actualWeb.GetComponent<SpawnCobweb>()._cobwebList.Count / _actualWeb.GetComponent<SpawnCobweb>()._maxTotalOfWeb);
+            
+        }
+        
+        
         if (Input.GetMouseButtonDown(2))
         {
             if (!_alreadyAWeb)
@@ -26,7 +39,7 @@ public class WebSpawnerp2 : MonoBehaviour
             }
             else if(_actualWeb != null)
             {
-
+    
                 _actualWeb.GetComponent<SpawnCobweb>()._cobwebList.Add(new Web());
                 _actualWeb.GetComponent<SpawnCobweb>().NewTriangle();
                 audiosource_spiderman.PlayOneShot(spiderman);
