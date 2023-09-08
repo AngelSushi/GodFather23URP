@@ -60,10 +60,7 @@ public class GameManager : MonoBehaviour
     public List<FormTest> _allForms;
     private void Start()
     {
-        
         _allForms = FindObjectsOfType<FormTest>().ToList();
-        
-        Debug.Log("list " + _allForms.Count);
         
         _allForms.ForEach(form => form.transform.parent.parent.gameObject.SetActive(false));
         Time.timeScale = 1f;

@@ -21,7 +21,7 @@ public class ScoreManager : MonoBehaviour
         {
             Debug.Log("value " + value);
             score = value;
-            scoreText.text = value.ToString();
+            scoreText.text = value + " pts";
         }
     }
 

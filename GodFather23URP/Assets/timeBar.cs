@@ -33,7 +33,6 @@ public class timeBar : MonoBehaviour
         {
             damageActive = false;
             StartCoroutine(timeDamage());
-            Debug.Log("false");
         }
     }
 
@@ -49,7 +48,7 @@ public class timeBar : MonoBehaviour
         }
         else
         {
-            Debug.Log("time est déja full. pas besoin de régeneration.");
+            Debug.Log("time est dï¿½ja full. pas besoin de rï¿½generation.");
         }
     }
 
@@ -69,7 +68,6 @@ public class timeBar : MonoBehaviour
         yield return new WaitForSeconds(timer);
         TakeDamage(damages);
         damageActive = true;
-        Debug.Log("true");
     }
 
     /*private IEnumerator timereduce()

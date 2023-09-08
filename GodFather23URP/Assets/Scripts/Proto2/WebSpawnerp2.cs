@@ -10,7 +10,9 @@ public class WebSpawnerp2 : MonoBehaviour
     private AudioSource audiosource_spiderman;
     public GameObject _actualWeb;
     bool _alreadyAWeb;
-
+    
+    public Slider slider;
+    public Transform cobwebParent;
     
     void Start()
     {
@@ -21,11 +23,10 @@ public class WebSpawnerp2 : MonoBehaviour
     {
         if (_actualWeb != null)
         {
-            Debug.Log(_actualWeb.GetComponent<SpawnCobweb>()._cobwebList.Count);
-            Debug.Log(_actualWeb.GetComponent<SpawnCobweb>()._maxTotalOfWeb);
-            Debug.Log("size " + (_actualWeb.GetComponent<SpawnCobweb>()._cobwebList.Count / _actualWeb.GetComponent<SpawnCobweb>()._maxTotalOfWeb));
+            float value = ((float)(_actualWeb.GetComponent<SpawnCobweb>()._maxAmountOfCheckpoint) -(float) (_actualWeb.GetComponent<SpawnCobweb>()._cobwebList.Count)) / (float)(_actualWeb.GetComponent<SpawnCobweb>()._maxAmountOfCheckpoint);
             
-         //   slider.value = (float) (_actualWeb.GetComponent<SpawnCobweb>()._cobwebList.Count / _actualWeb.GetComponent<SpawnCobweb>()._maxTotalOfWeb);
+            Debug.Log("value " + value);
+            slider.value = value;
             
         }
         
@@ -42,7 +43,7 @@ public class WebSpawnerp2 : MonoBehaviour
     
                 _actualWeb.GetComponent<SpawnCobweb>()._cobwebList.Add(new Web());
                 _actualWeb.GetComponent<SpawnCobweb>().NewTriangle();
-                audiosource_spiderman.PlayOneShot(spiderman);
+            //    audiosource_spiderman.PlayOneShot(spiderman);
                 // bruit de spiderman ici pls
             }
 

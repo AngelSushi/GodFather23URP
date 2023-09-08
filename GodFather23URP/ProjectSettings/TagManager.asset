@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Cobweb
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
@@ -53,4 +54,7 @@ TagManager:
     locked: 0
   - name: Web
     uniqueID: 18033497
+    locked: 0
+  - name: CobWeb
+    uniqueID: 4115557735
     locked: 0

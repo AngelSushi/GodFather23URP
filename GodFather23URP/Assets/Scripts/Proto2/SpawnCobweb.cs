@@ -23,6 +23,9 @@ public class SpawnCobweb : MonoBehaviour
 
     [HideInInspector] public int _webAmount;
     [HideInInspector] public bool _isDead = true;
+
+    
+    
     void Start()
     {
         audiosource_webdestroy = GetComponent<AudioSource>();
@@ -82,6 +85,7 @@ public class SpawnCobweb : MonoBehaviour
         {
             _lastWeb.GetComponent<HingeJoint2D>().enabled = true;
             GameObject _newWeb = Instantiate(_cobweb, _lastWeb.GetComponent<CobwebScript>()._pivot.position,_lastWeb.GetComponent<Transform>().localRotation);
+            _newWeb.transform.parent = FindObjectOfType<WebSpawnerp2>().cobwebParent;
 
 
             _lastWeb.GetComponent<HingeJoint2D>().connectedBody = _newWeb.GetComponent<Rigidbody2D>();
