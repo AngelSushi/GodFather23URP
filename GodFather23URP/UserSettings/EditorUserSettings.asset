@@ -5,6 +5,12 @@ EditorUserSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 4
   m_ConfigSettings:
+<<<<<<< HEAD
+=======
+    RecentlyUsedSceneGuid-0:
+      value: 5657505756040d5a0f5d0e7a477059444e4f1b2f747e2369287d4a61e0b8326d
+      flags: 0
+>>>>>>> ClearNewBranch
     vcSharedLogLevel:
       value: 0d5e400f0650
       flags: 0
