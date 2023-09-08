@@ -325,7 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfde18ccdc503a74cb2ff7dbcba95f8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 1000
+  timer: 20
 --- !u!70 &5022286562746542481
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

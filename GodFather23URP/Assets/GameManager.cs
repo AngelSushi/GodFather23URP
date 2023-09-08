@@ -55,6 +55,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject deadAnim;
 
+    public int regenTimePerEnnemy;
+
     public List<FormTest> _allForms;
     private void Start()
     {
@@ -64,6 +66,7 @@ public class GameManager : MonoBehaviour
         Debug.Log("list " + _allForms.Count);
         
         _allForms.ForEach(form => form.transform.parent.parent.gameObject.SetActive(false));
+        Time.timeScale = 1f;
     }
 
     private void Awake()
@@ -106,6 +109,7 @@ public class GameManager : MonoBehaviour
         ComboMultiplier combo = combos.FirstOrDefault(combo => combo.Insect == _multiplier);
         float comboMultiplier = combo == null ? combos.Last().Combo : combo.Combo;
 
+        FindObjectOfType<timeBar>().Regeneratetime(regenTimePerEnnemy * _multiplier);
         FindObjectOfType<ScoreManager>().Score =FindObjectOfType<ScoreManager>().Score + ((int)((pointEat * _multiplier) * comboMultiplier));
         FindObjectOfType<Main_music>().Eat();
         
@@ -116,12 +120,12 @@ public class GameManager : MonoBehaviour
 
     public void SpawnEnemy(GameObject _enemy, Vector2 _pos)
     {
-        if (FindObjectOfType<spawn>()._nextIsBoss)
+      /*  if (FindObjectOfType<spawn>()._nextIsBoss)
         {
             _enemy = FindObjectOfType<spawn>().boss;
             FindObjectOfType<spawn>()._nextIsBoss = false;
         }
-
+*/
         if (GameManager._instance.IsInBoss)
         {
             return;

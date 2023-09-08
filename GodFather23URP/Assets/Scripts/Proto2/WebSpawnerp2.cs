@@ -11,7 +11,7 @@ public class WebSpawnerp2 : MonoBehaviour
     public GameObject _actualWeb;
     bool _alreadyAWeb;
 
-    public Slider slider;
+    
     void Start()
     {
         audiosource_spiderman = GetComponent<AudioSource>();
@@ -25,7 +25,7 @@ public class WebSpawnerp2 : MonoBehaviour
             Debug.Log(_actualWeb.GetComponent<SpawnCobweb>()._maxTotalOfWeb);
             Debug.Log("size " + (_actualWeb.GetComponent<SpawnCobweb>()._cobwebList.Count / _actualWeb.GetComponent<SpawnCobweb>()._maxTotalOfWeb));
             
-            slider.value = (float) (_actualWeb.GetComponent<SpawnCobweb>()._cobwebList.Count / _actualWeb.GetComponent<SpawnCobweb>()._maxTotalOfWeb);
+         //   slider.value = (float) (_actualWeb.GetComponent<SpawnCobweb>()._cobwebList.Count / _actualWeb.GetComponent<SpawnCobweb>()._maxTotalOfWeb);
             
         }
         
@@ -64,7 +64,7 @@ public class WebSpawnerp2 : MonoBehaviour
     {
         if (_alreadyAWeb)
         {
-            audiosource_spiderman.PlayOneShot(spiderman);
+          //  audiosource_spiderman.PlayOneShot(spiderman);
             _actualWeb = Instantiate(_web, transform.position, Quaternion.identity);
             _actualWeb.GetComponent<SpawnCobweb>()._cobwebList.Add(new Web());
         }

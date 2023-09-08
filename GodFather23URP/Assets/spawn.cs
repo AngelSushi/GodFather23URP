@@ -13,7 +13,7 @@ public class spawn : MonoBehaviour
     [SerializeField] private List<GameObject> insectsPrefab;
     [SerializeField] public GameObject boss;
     [SerializeField] private float bossTimer;
-    public bool _nextIsBoss;
+  //  public bool _nextIsBoss;
     
     public GameObject spawnPoint;
     public GameObject respawn;
@@ -31,7 +31,7 @@ public class spawn : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(BossTimer());
+      //  StartCoroutine(BossTimer());
     }
 
     void Update()
@@ -104,11 +104,12 @@ public class spawn : MonoBehaviour
 
         GameObject ennemyToSpawn = insectsPrefab[random];
 
-        if (_nextIsBoss)
+     /*   if (_nextIsBoss)
         {
             ennemyToSpawn = boss;
             _nextIsBoss = false;
         }
+        */
         //respawn = Instantiate(ennemyToSpawn, spawnPoint.transform.position, spawnPoint.transform.rotation);
        // GameManager._instance._listMonster.Add(respawn);
 
@@ -120,14 +121,14 @@ public class spawn : MonoBehaviour
         Cooldown = true;
     }
 
-    private IEnumerator BossTimer()
+  /*  private IEnumerator BossTimer()
     {
         yield return new WaitForSeconds(bossTimer);
 
         _nextIsBoss = true;
         StartCoroutine(BossTimer());
     }
-
+*/
     void OnDrawGizmos()
     {
         //Gizmos.DrawWireSphere(spawnPoint.transform.position, size); 
