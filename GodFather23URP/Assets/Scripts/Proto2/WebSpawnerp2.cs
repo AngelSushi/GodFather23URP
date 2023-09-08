@@ -5,13 +5,14 @@ using UnityEngine;
 public class WebSpawnerp2 : MonoBehaviour
 {
     [SerializeField] GameObject _web;
+    [SerializeField] private AudioClip spiderman = null;
+    private AudioSource audiosource_spiderman;
     public GameObject _actualWeb;
     bool _alreadyAWeb;
 
-    private
     void Start()
     {
-
+        audiosource_spiderman = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -28,8 +29,12 @@ public class WebSpawnerp2 : MonoBehaviour
 
                 _actualWeb.GetComponent<SpawnCobweb>()._cobwebList.Add(new Web());
                 _actualWeb.GetComponent<SpawnCobweb>().NewTriangle();
+                audiosource_spiderman.PlayOneShot(spiderman);
+                // bruit de spiderman ici pls
             }
 
+            //dash
+            StartCoroutine(GetComponent<CharacterMovementp2>().Dash());
         }
         if (Input.GetKeyDown("escape"))
         {
@@ -46,6 +51,7 @@ public class WebSpawnerp2 : MonoBehaviour
     {
         if (_alreadyAWeb)
         {
+            audiosource_spiderman.PlayOneShot(spiderman);
             _actualWeb = Instantiate(_web, transform.position, Quaternion.identity);
             _actualWeb.GetComponent<SpawnCobweb>()._cobwebList.Add(new Web());
         }
