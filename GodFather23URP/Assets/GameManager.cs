@@ -54,7 +54,18 @@ public class GameManager : MonoBehaviour
     }
 
     public GameObject deadAnim;
-    
+
+    public List<FormTest> _allForms;
+    private void Start()
+    {
+        
+        _allForms = FindObjectsOfType<FormTest>().ToList();
+        
+        Debug.Log("list " + _allForms.Count);
+        
+        _allForms.ForEach(form => form.transform.parent.parent.gameObject.SetActive(false));
+    }
+
     private void Awake()
     {
         _instance = this;
@@ -105,7 +116,21 @@ public class GameManager : MonoBehaviour
 
     public void SpawnEnemy(GameObject _enemy, Vector2 _pos)
     {
+        if (FindObjectOfType<spawn>()._nextIsBoss)
+        {
+            _enemy = FindObjectOfType<spawn>().boss;
+            FindObjectOfType<spawn>()._nextIsBoss = false;
+        }
+
+        if (GameManager._instance.IsInBoss)
+        {
+            return;
+        }
+        
         GameObject _newEnemy = Instantiate(_enemy, new Vector3(_pos.x,_pos.y,8), Quaternion.identity);
-        _listMonster.Add(_newEnemy);
+        if (_enemy != FindObjectOfType<spawn>().boss)
+        {
+            _listMonster.Add(_newEnemy);
+        }
     }
 }
