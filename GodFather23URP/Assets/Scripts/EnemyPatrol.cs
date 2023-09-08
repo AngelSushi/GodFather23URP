@@ -225,7 +225,7 @@ public class EnemyPatrol : MonoBehaviour
         destination = new Vector2(randomX, randomY);
         
         
-        Debug.Log("distance " + Vector2.Distance(destination, transform.position));
+        //Debug.Log("distance " + Vector2.Distance(destination, transform.position));
         
         secureOffset = Vector2.Distance(destination, transform.position) < originSecureOffset ? (int)Vector2.Distance(destination, transform.position) : originSecureOffset;
     }

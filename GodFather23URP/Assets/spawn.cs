@@ -60,7 +60,8 @@ public class spawn : MonoBehaviour
             int random = Random.Range(0, insectsPrefab.Count);
 
             GameObject ennemyToSpawn = insectsPrefab[random];
-            GameManager._instance.SpawnEnemy(ennemyToSpawn, _positon);
+            GameObject _newEnemy = Instantiate(ennemyToSpawn, _positon, Quaternion.identity);
+
         }
         /*
         Vector3 position = Random.insideUnitCircle * size;
