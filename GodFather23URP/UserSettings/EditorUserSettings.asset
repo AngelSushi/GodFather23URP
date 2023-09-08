@@ -7,9 +7,16 @@ EditorUserSettings:
   m_ConfigSettings:
     RecentlyUsedSceneGuid-0:
 <<<<<<< HEAD
+<<<<<<< HEAD
       value: 5657505756040d5a0f5d0e7a477059444e4f1b2f747e2369287d4a61e0b8326d
 =======
       value: 5755560406540b585f560e234473594445161a2b7d7e2534297e4f67b4e3603e
+>>>>>>> hugo
+=======
+      value: 5755560406540b585f560e234473594445161a2b7d7e2534297e4f67b4e3603e
+=======
+      value: 5657505756040d5a0f5d0e7a477059444e4f1b2f747e2369287d4a61e0b8326d
+>>>>>>> pierre
 >>>>>>> hugo
       flags: 0
     vcSharedLogLevel:
