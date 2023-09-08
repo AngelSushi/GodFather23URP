@@ -49,15 +49,19 @@ public class BossManager : MonoBehaviour
         get => _isInFight;
         set => _isInFight = true;
     }
-    
-    
+
+    public List<AudioClip> musics;
+    public List<AudioClip> sounds;
+
+    public AudioSource music;
+    public AudioSource sound;
     private void Start()
     {
         OnFormFinished += OnFormFinishedFunc;
         OnFormBegin += OnFormBeginFunc;
         maxLife = life; 
         _allForms = FindObjectsOfType<FormTest>().ToList();
-        _allForms.ForEach(form => SetLightEnabled(form.gameObject,false));
+        _allForms.ForEach(form => form.transform.parent.parent.gameObject.SetActive(false));
     }
 
     private void OnDisable()
@@ -69,7 +73,7 @@ public class BossManager : MonoBehaviour
     private void OnFormBeginFunc(object sender, OnFormBeginArgs e)
     {
         Debug.Log("on form begin");
-        
+
         IsInFight = true;
         RandomPattern();
     }
@@ -92,10 +96,14 @@ public class BossManager : MonoBehaviour
         if (life > 0)
         {
             OnFormBegin.Invoke(this,new OnFormBeginArgs());
+            sound.clip = sounds[1]; // sounds
+            sound.Play();
         }
         else
         {
-           Debug.Log("il est moooort"); 
+            music.clip = musics[2]; // musique
+            music.Play();
+            Debug.Log("il est moooort"); 
         }
 
     }
@@ -108,17 +116,18 @@ public class BossManager : MonoBehaviour
         Debug.Log("random " + _current.gameObject.name);
         
         SetLightEnabled(_current.gameObject,true);
-        _current.gameObject.SetActive(true);
+        _current.transform.parent.parent.gameObject.SetActive(true);
+        _current.transform.parent.parent.GetChild(_current.transform.parent.parent.childCount -1).gameObject.SetActive(true);
         GameManager._instance.IsInBoss = true;
         
         _previewIndex = 0;
 
         for (int i = 0; i < _current.transform.childCount; i++)
         {
-            _current.transform.GetChild(_previewIndex).GetComponent<Animator>().enabled = false;
+            _current.transform.parent.parent.GetChild(_previewIndex).GetComponent<Animator>().enabled = false;
         }
         
-        _current.transform.GetChild(_previewIndex).GetComponent<Animator>().enabled = true;
+        _current.transform.parent.parent.GetChild(_previewIndex).GetComponent<Animator>().enabled = true;
 
         StartCoroutine(WaitPreviewEnd());
     }
@@ -129,15 +138,15 @@ public class BossManager : MonoBehaviour
 
         if (_current != null)
         {
-            _current.transform.GetChild(_previewIndex).GetComponent<Animator>().enabled = false;
+            _current.transform.parent.parent.GetChild(_previewIndex).GetComponent<Animator>().enabled = false;
             _previewIndex++;
 
-            if (_previewIndex >= _current.transform.childCount)
+            if (_previewIndex >= _current.transform.parent.parent.childCount - 1)
             {
                 _previewIndex = 0;
             }
             
-            _current.transform.GetChild(_previewIndex).GetComponent<Animator>().enabled = true;
+            _current.transform.parent.parent.GetChild(_previewIndex).GetComponent<Animator>().enabled = true;
             StartCoroutine(WaitPreviewEnd());
         }
     }

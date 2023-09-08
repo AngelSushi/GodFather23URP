@@ -73,22 +73,20 @@ public class FormTest : MonoBehaviour
         {
             if (_points.Count != models.Count)
             {
-                Debug.Log("loose (" + _points.Count + "/" + models.Count + ")");
+                BossManager boss = FindObjectsOfType<BossManager>().First(boss => boss.IsInFight);
+
+                boss.sound.clip = boss.sounds[0];
+                boss.sound.Play();
             }
             else
-            {
-
+            {   
                 bool goodPath = true;
-                GameObject pointDifferent = null;
-                GameObject modelDifferent = null;
                 
                 for (int i = 0; i < _points.Count; i++)
                 {
                     if (_points[i] != models[i])
                     {
                         goodPath = false;
-                        pointDifferent = _points[i];
-                        modelDifferent = models[i];
                         break;
                     }
                 }
@@ -96,13 +94,18 @@ public class FormTest : MonoBehaviour
                 if (goodPath)
                 {
                     Debug.Log("win");
-                    gameObject.SetActive(false);
-                    FindObjectsOfType<BossManager>().First(boss => boss.IsInFight).OnFormFinished?.Invoke(this,new BossManager.OnFormFinishedArgs(gameObject));
+                    transform.parent.parent.gameObject.SetActive(false);
+                    BossManager boss = FindObjectsOfType<BossManager>().First(boss => boss.IsInFight);
+
+                    boss.OnFormFinished?.Invoke(this,new BossManager.OnFormFinishedArgs(gameObject));
 
                 }
                 else
                 {
-                    Debug.Log("loose (" + pointDifferent.name + "/" + modelDifferent.name + ")");
+                    BossManager boss = FindObjectsOfType<BossManager>().First(boss => boss.IsInFight);
+
+                    boss.sound.clip = boss.sounds[0];
+                    boss.sound.Play();
                 }
             }
             
