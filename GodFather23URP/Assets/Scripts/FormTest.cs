@@ -15,15 +15,17 @@ public class FormTest : MonoBehaviour
     
     private List<GameObject> _points = new List<GameObject>();
 
-    [SerializeField] private TrailRenderer trailRenderer;
+    [SerializeField] public TrailRenderer trailRenderer;
 
     private bool _succeed;
     private void Awake()
     {
-        for (int i = 0; i < transform.childCount; i++)
+        for (int i = 0; i < transform.parent.parent.childCount - 1; i++)
         {
-            models.Add(transform.GetChild(i).gameObject);
+            models.Add(transform.parent.parent.GetChild(i).gameObject);
         }
+        
+        Debug.Log("modelLength " + models.Count);
 
         trailRenderer.enabled = false;
     }
@@ -66,6 +68,16 @@ public class FormTest : MonoBehaviour
        
     }
 
+    private void OnMouseDown()
+    {
+        if (canDraw)
+        {
+            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            worldPosition.z = 4;
+            trailRenderer.transform.position = worldPosition;
+            trailRenderer.SetPosition(0,worldPosition);    
+        }
+    }
 
     private void OnMouseUp()
     {
@@ -73,6 +85,7 @@ public class FormTest : MonoBehaviour
         {
             if (_points.Count != models.Count)
             {
+                Debug.Log("loose");
                 BossManager boss = FindObjectsOfType<BossManager>().First(boss => boss.IsInFight);
 
                 boss.sound.clip = boss.sounds[0];
@@ -81,6 +94,8 @@ public class FormTest : MonoBehaviour
             else
             {   
                 bool goodPath = true;
+                int modelCount = models.Count;
+                int pointCOunt = _points.Count;
                 
                 for (int i = 0; i < _points.Count; i++)
                 {
@@ -102,8 +117,8 @@ public class FormTest : MonoBehaviour
                 }
                 else
                 {
+                    Debug.Log("loose");
                     BossManager boss = FindObjectsOfType<BossManager>().First(boss => boss.IsInFight);
-
                     boss.sound.clip = boss.sounds[0];
                     boss.sound.Play();
                 }
@@ -112,8 +127,7 @@ public class FormTest : MonoBehaviour
             trailRenderer.Clear();
             trailRenderer.gameObject.SetActive(false);
             _points.Clear();
-            Debug.Log("cleaaar ");
-            canDraw = false;
+            canDraw = true;
         }
     }
     
