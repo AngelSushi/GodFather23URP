@@ -12,6 +12,7 @@ public class timeBar : MonoBehaviour
     public int currentHealth;
 
     public float timer = 1f;
+    public float timeReduce = 1f;
     private bool damageActive = false;
 
     public sliderBar slideBar;
@@ -23,6 +24,7 @@ public class timeBar : MonoBehaviour
         currentHealth = maxtime;
         slideBar.SetMaxTime(maxtime);
         StartCoroutine(timeDamage());
+        //StartCoroutine(timereduce());
     }
 
     private void Update()
@@ -69,6 +71,12 @@ public class timeBar : MonoBehaviour
         damageActive = true;
         Debug.Log("true");
     }
+
+    /*private IEnumerator timereduce()
+    {
+        yield return new WaitForSeconds(timeReduce);
+        currentHealth
+    }*/
 
     public void Die ()
     {
