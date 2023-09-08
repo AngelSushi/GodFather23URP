@@ -11,12 +11,24 @@ public class Player : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D col)
     {
-        if (Input.GetKeyDown(KeyCode.R) && col.gameObject.TryGetComponent(out BossManager bossManager))
+        if (Input.GetKeyDown(KeyCode.R))
         {
-            bossManager.OnFormBegin?.Invoke(this,new BossManager.OnFormBeginArgs());
+            if (col.gameObject.TryGetComponent(out BossManager bossManager) && !GameManager._instance.IsInBoss)
+            {
+                bossManager.music.clip = bossManager.musics[0];
+                bossManager.music.Play();
+                StartCoroutine(WaitMusic(bossManager));
+                bossManager.OnFormBegin?.Invoke(this,new BossManager.OnFormBeginArgs());    
+            }
+            
         }
     }
 
-    
+    private IEnumerator WaitMusic(BossManager bossManager)
+    {
+        yield return new WaitForSeconds(0.5f);
+        bossManager.music.clip = bossManager.musics[1];
+        bossManager.music.Play();
+    }
 
 }

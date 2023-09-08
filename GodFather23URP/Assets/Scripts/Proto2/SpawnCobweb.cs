@@ -18,10 +18,14 @@ public class SpawnCobweb : MonoBehaviour
     int _cobwebID = 0;
     public List<GameObject> _triangles = new List<GameObject>();
 
+    [SerializeField] private AudioClip webdestroy = null;
+    private AudioSource audiosource_webdestroy;
+
     [HideInInspector] public int _webAmount;
     [HideInInspector] public bool _isDead = true;
     void Start()
     {
+        audiosource_webdestroy = GetComponent<AudioSource>();
         _spider = GameObject.FindGameObjectWithTag("Player");
         //StartCoroutine(Coro());
         _lastWeb = gameObject;
@@ -49,7 +53,7 @@ public class SpawnCobweb : MonoBehaviour
         }
         else
         {
-            Debug.Log("here");
+            //Debug.Log("here");
         }
         
     }
@@ -106,7 +110,7 @@ public class SpawnCobweb : MonoBehaviour
 
         if (_direction != Vector3.zero)
         {
-            // Calculez l'angle d'orientation en radians et convertissez-le en degrés
+            // Calculez l'angle d'orientation en radians et convertissez-le en degrï¿½s
             float _angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
 
             // Appliquez la rotation pour orienter l'objet vers la cible
@@ -130,7 +134,7 @@ public class SpawnCobweb : MonoBehaviour
         }
 
         GameObject.FindGameObjectWithTag("Player").GetComponent<WebSpawnerp2>().NoWeb();
-
+        audiosource_webdestroy.PlayOneShot(webdestroy);
     }
 
 
