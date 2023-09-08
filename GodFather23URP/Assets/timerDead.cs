@@ -11,6 +11,7 @@ public class timerDead : MonoBehaviour
     void Start()
     {
         StartCoroutine(endTimer());
+        GameManager._instance._listMonster.Add(gameObject);
     }
 
     private IEnumerator endTimer()

@@ -19,6 +19,7 @@ public class SpawnCobweb : MonoBehaviour
     public List<GameObject> _triangles = new List<GameObject>();
 
     [HideInInspector] public int _webAmount;
+    [HideInInspector] public bool _isDead = true;
     void Start()
     {
         _spider = GameObject.FindGameObjectWithTag("Player");
@@ -31,7 +32,7 @@ public class SpawnCobweb : MonoBehaviour
     {
         //Debug.Log((_spider.transform.position - transform.position).magnitude);
         //Debug.Log("cobweb id : " + _cobwebID + " cobweb count : " + _cobwebList[_cobwebID].Cobwebs.Count);-
-        if ((_spider.transform.position - _lastWeb.transform.position).magnitude > _spawnRange && _cobwebList[_cobwebID].Cobwebs.Count < _maxAmountOfWeb && _triangles.Count < _maxAmountOfCheckpoint)
+        if ((_spider.transform.position - _lastWeb.transform.position).magnitude > _spawnRange && _cobwebList[_cobwebID].Cobwebs.Count < _maxAmountOfWeb && _triangles.Count < _maxAmountOfCheckpoint && _isDead)
         //if ((_spider.transform.position - _lastWeb.transform.position).magnitude > _spawnRange && _cobwebList[_cobwebID].Cobwebs.Count < _maxAmountOfWeb && _maxTotalOfWeb >_webAmount)
         {
             NewWeb();
@@ -45,6 +46,10 @@ public class SpawnCobweb : MonoBehaviour
             _lastWeb.GetComponent<HingeJoint2D>().connectedBody = _spider.GetComponent<Rigidbody2D>();
             //_lastWeb.transform.parent = _spider.transform;
             //AddForce();
+        }
+        else
+        {
+            //Debug.Log("here");
         }
         
     }
@@ -126,14 +131,9 @@ public class SpawnCobweb : MonoBehaviour
 
         GameObject.FindGameObjectWithTag("Player").GetComponent<WebSpawnerp2>().NoWeb();
 
-        StartCoroutine(RefillWeb());
     }
 
-    IEnumerator RefillWeb()
-    {
-        yield return new WaitForSeconds(.5f);
-        Debug.Log("hi");
-    }
+
     private void OnDrawGizmos()
     {
         //Gizmos.DrawWireSphere(_spider.transform.position, _spawnRange);

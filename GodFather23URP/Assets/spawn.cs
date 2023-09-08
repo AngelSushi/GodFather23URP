@@ -25,6 +25,9 @@ public class spawn : MonoBehaviour
     public float spawnCooldown = 3f;
     public bool Cooldown = true;
 
+    [SerializeField] Vector2 _pointA;
+    [SerializeField] Vector2 _pointB;
+    [SerializeField] float _sideSize = 2;
 
     private void Start()
     {
@@ -42,6 +45,24 @@ public class spawn : MonoBehaviour
 
     public void random ()
     {
+
+        Vector3 _positon = new Vector3(Random.Range(_pointA.x - _sideSize, _pointB.x + _sideSize), Random.Range(_pointA.y - _sideSize, _pointB.y + _sideSize), 8);
+        //Debug.Log(_positon); 
+        //detection 
+        if (_positon.x > _pointB.x || _positon.x < _pointA.x || _positon.y > _pointB.y || _positon.y < _pointA.y)
+            random();
+        else
+        {
+            //SpawnEnnemy(_positon);
+            Cooldown = false;
+            StartCoroutine(spawnTime());
+
+            int random = Random.Range(0, insectsPrefab.Count);
+
+            GameObject ennemyToSpawn = insectsPrefab[random];
+            GameManager._instance.SpawnEnemy(ennemyToSpawn, _positon);
+        }
+        /*
         Vector3 position = Random.insideUnitCircle * size;
         position.z = 8f;
        
@@ -72,6 +93,7 @@ public class spawn : MonoBehaviour
             SpawnEnnemy();
         }
         else random();
+        */
     }
 
     private void SpawnEnnemy()
@@ -87,9 +109,8 @@ public class spawn : MonoBehaviour
             ennemyToSpawn = boss;
             _nextIsBoss = false;
         }
-        
-        respawn = Instantiate(ennemyToSpawn, spawnPoint.transform.position, spawnPoint.transform.rotation);
-        GameManager._instance._listMonster.Add(respawn);
+        //respawn = Instantiate(ennemyToSpawn, spawnPoint.transform.position, spawnPoint.transform.rotation);
+       // GameManager._instance._listMonster.Add(respawn);
 
     }
 
@@ -105,5 +126,14 @@ public class spawn : MonoBehaviour
 
         _nextIsBoss = true;
         StartCoroutine(BossTimer());
+    }
+
+    void OnDrawGizmos()
+    {
+        //Gizmos.DrawWireSphere(spawnPoint.transform.position, size); 
+        Gizmos.DrawLine(new Vector3(_pointA.x, _pointA.y, 0), new Vector3(_pointA.x, _pointB.y, 0));
+        Gizmos.DrawLine(new Vector3(_pointB.x, _pointB.y, 0), new Vector3(_pointB.x, _pointA.y, 0));
+        Gizmos.DrawLine(new Vector3(_pointA.x, _pointB.y, 0), new Vector3(_pointA.x, _pointA.y, 0));
+        Gizmos.DrawLine(new Vector3(_pointB.x, _pointA.y, 0), new Vector3(_pointB.x, _pointB.y, 0));
     }
 }

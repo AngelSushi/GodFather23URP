@@ -146,10 +146,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cobweb: {fileID: 8513081132476665564, guid: 53b38719066ba024a86a6ad6c9af09d3, type: 3}
   _checkpoint: {fileID: 5038602312748062461, guid: 990e76ca4bee324498d860101b3a6a59, type: 3}
-  _maxAmountOfWeb: 15
+  _maxAmountOfWeb: 30
   _maxTotalOfWeb: 75
   _maxAmountOfCheckpoint: 8
   _spawnRange: 0.2
   _spider: {fileID: 0}
   _cobwebList: []
   _triangles: []
+  _webAmount: 0
+  _isDead: 1
