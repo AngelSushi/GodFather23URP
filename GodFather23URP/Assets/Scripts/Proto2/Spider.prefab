@@ -426,7 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f7039b98d7c674ab5d721b28897ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spiderSpeed: 2.5
+  _spiderSpeed: 3.5
   _distanceMin: 0.09
   gfx: {fileID: 2121824930841948967}
   _dash:
@@ -489,6 +489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _web: {fileID: 4406446046011741821, guid: 4bfff749cdf54ae47977c7fa334f85c1, type: 3}
+  spiderman: {fileID: 0}
   _actualWeb: {fileID: 0}
 --- !u!58 &-3057677113819178410
 CircleCollider2D:

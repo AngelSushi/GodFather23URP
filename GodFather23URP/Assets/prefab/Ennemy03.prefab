@@ -354,12 +354,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187d01c5456e69e40adb67e24eebd08d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 1.5
   secureOffset: 0
   debugMode: 0
   canBeStun: 1
   isStunned: 0
   stunTimer: 2
+  respawnStunTimer: 0
 --- !u!95 &3712146396548880911
 Animator:
   serializedVersion: 5
@@ -395,7 +396,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
