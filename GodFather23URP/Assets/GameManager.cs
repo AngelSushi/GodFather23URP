@@ -107,7 +107,7 @@ public class GameManager : MonoBehaviour
         float comboMultiplier = combo == null ? combos.Last().Combo : combo.Combo;
 
         FindObjectOfType<ScoreManager>().Score =FindObjectOfType<ScoreManager>().Score + ((int)((pointEat * _multiplier) * comboMultiplier));
-
+        FindObjectOfType<Main_music>().Eat();
         
         
         

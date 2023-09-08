@@ -6,13 +6,13 @@ public class Main_music : MonoBehaviour
 {
 
     [SerializeField] private AudioClip sontransiboss = null;
-    private AudioSource audiosource_transiboss;
+    public AudioSource main,sfx;
     private bool bossverif = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        audiosource_transiboss = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
@@ -20,14 +20,20 @@ public class Main_music : MonoBehaviour
     {
         if (GameManager._instance.IsInBoss)
         {
-            audiosource_transiboss.Stop();
-            audiosource_transiboss.PlayOneShot(sontransiboss);
+            main.Stop();
             bossverif = true;
         }
         if (!GameManager._instance.IsInBoss && bossverif)
         {
-
+            bossverif = false;
+            main.Play();
+            
         }
 
+    }
+
+    public void Eat()
+    {
+        sfx.Play();
     }
 }
