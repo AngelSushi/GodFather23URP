@@ -15,6 +15,8 @@ MonoBehaviour:
   m_PixelRect:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
     x: 2249
     y: 302.5
     width: 1206
@@ -22,13 +24,25 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title:
 =======
+>>>>>>> hugo
     x: 0
     y: 43
     width: 1920
     height: 997
   m_ShowMode: 4
   m_Title: Project
+<<<<<<< HEAD
+=======
+    x: 2249
+    y: 302.5
+    width: 1206
+    height: 715
+  m_ShowMode: 4
+  m_Title:
+>>>>>>> hugo
+=======
 >>>>>>> pierre
+>>>>>>> hugo
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -53,6 +67,8 @@ MonoBehaviour:
     x: 0
     y: 30
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
     width: 1206
     height: 665
   m_MinSize: {x: 679, y: 492}
@@ -60,13 +76,25 @@ MonoBehaviour:
   vertical: 0
   controlID: 119
 =======
+>>>>>>> hugo
     width: 1920
     height: 947
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
   controlID: 99
+<<<<<<< HEAD
+=======
+    width: 1206
+    height: 665
+  m_MinSize: {x: 679, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
+  vertical: 0
+  controlID: 119
+>>>>>>> hugo
+=======
 >>>>>>> pierre
+>>>>>>> hugo
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -83,6 +111,8 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
     x: 921
     y: 0
     width: 285
@@ -90,13 +120,25 @@ MonoBehaviour:
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
 =======
+>>>>>>> hugo
     x: 1466
     y: 0
     width: 454
     height: 947
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
+<<<<<<< HEAD
+=======
+    x: 921
+    y: 0
+    width: 285
+    height: 665
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
+>>>>>>> hugo
+=======
 >>>>>>> pierre
+>>>>>>> hugo
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -120,16 +162,28 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
     width: 228
     height: 394
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
 =======
+>>>>>>> hugo
     width: 363
     height: 561
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
+<<<<<<< HEAD
+=======
+    width: 228
+    height: 394
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
+>>>>>>> hugo
+=======
 >>>>>>> pierre
+>>>>>>> hugo
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -152,6 +206,16 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+    y: 561
+    width: 1466
+    height: 386
+=======
+    y: 394
+    width: 921
+    height: 271
+>>>>>>> hugo
+=======
     y: 394
     width: 921
     height: 271
@@ -160,6 +224,7 @@ MonoBehaviour:
     width: 1466
     height: 386
 >>>>>>> pierre
+>>>>>>> hugo
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 12}
@@ -189,11 +254,14 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
     width: 1206
     height: 715
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 =======
+>>>>>>> hugo
     width: 1920
     height: 997
   m_MinSize: {x: 875, y: 300}
@@ -202,7 +270,16 @@ MonoBehaviour:
   m_TopViewHeight: 30
   m_UseBottomView: 1
   m_BottomViewHeight: 20
+<<<<<<< HEAD
+=======
+    width: 1206
+    height: 715
+  m_MinSize: {x: 875, y: 300}
+  m_MaxSize: {x: 10000, y: 10000}
+>>>>>>> hugo
+=======
 >>>>>>> pierre
+>>>>>>> hugo
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -221,6 +298,21 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+    width: 1920
+    height: 30
+  m_MinSize: {x: 0, y: 0}
+  m_MaxSize: {x: 0, y: 0}
+  m_LastLoadedLayoutName: 
+=======
+    width: 1206
+    height: 30
+  m_MinSize: {x: 0, y: 0}
+  m_MaxSize: {x: 0, y: 0}
+  m_LoadedToolbars: []
+  m_LastLoadedLayoutName: Default
+>>>>>>> hugo
+=======
     width: 1206
     height: 30
   m_MinSize: {x: 0, y: 0}
@@ -234,6 +326,7 @@ MonoBehaviour:
   m_MaxSize: {x: 0, y: 0}
   m_LastLoadedLayoutName: 
 >>>>>>> pierre
+>>>>>>> hugo
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -251,12 +344,21 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+    y: 977
+    width: 1920
+=======
+    y: 695
+    width: 1206
+>>>>>>> hugo
+=======
     y: 695
     width: 1206
 =======
     y: 977
     width: 1920
 >>>>>>> pierre
+>>>>>>> hugo
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -280,6 +382,8 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
     width: 921
     height: 665
   m_MinSize: {x: 403, y: 492}
@@ -287,13 +391,25 @@ MonoBehaviour:
   vertical: 1
   controlID: 92
 =======
+>>>>>>> hugo
     width: 1466
     height: 947
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
   controlID: 100
+<<<<<<< HEAD
+=======
+    width: 921
+    height: 665
+  m_MinSize: {x: 403, y: 492}
+  m_MaxSize: {x: 10001, y: 14042}
+  vertical: 1
+  controlID: 92
+>>>>>>> hugo
+=======
 >>>>>>> pierre
+>>>>>>> hugo
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -314,6 +430,8 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
     width: 921
     height: 394
   m_MinSize: {x: 403, y: 221}
@@ -321,13 +439,25 @@ MonoBehaviour:
   vertical: 0
   controlID: 93
 =======
+>>>>>>> hugo
     width: 1466
     height: 561
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
   controlID: 101
+<<<<<<< HEAD
+=======
+    width: 921
+    height: 394
+  m_MinSize: {x: 403, y: 221}
+  m_MaxSize: {x: 8003, y: 4021}
+  vertical: 0
+  controlID: 93
+>>>>>>> hugo
+=======
 >>>>>>> pierre
+>>>>>>> hugo
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -339,6 +469,8 @@ MonoBehaviour:
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
   m_Name:
   m_EditorClassIdentifier:
   m_Children: []
@@ -351,6 +483,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
 =======
+>>>>>>> hugo
   m_Name: SceneView
   m_EditorClassIdentifier: 
   m_Children: []
@@ -362,7 +495,23 @@ MonoBehaviour:
     height: 561
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
+<<<<<<< HEAD
+=======
+  m_Name:
+  m_EditorClassIdentifier:
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 228
+    y: 0
+    width: 693
+    height: 394
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+>>>>>>> hugo
+=======
 >>>>>>> pierre
+>>>>>>> hugo
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -390,12 +539,15 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
     x: 2249
     y: 726.5
     width: 920
     height: 250
   m_ViewDataDictionary: {fileID: 0}
 =======
+>>>>>>> hugo
     x: 0
     y: 634
     width: 1465
@@ -404,7 +556,17 @@ MonoBehaviour:
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
+<<<<<<< HEAD
+=======
+    x: 2249
+    y: 726.5
+    width: 920
+    height: 250
+  m_ViewDataDictionary: {fileID: 0}
+>>>>>>> hugo
+=======
 >>>>>>> pierre
+>>>>>>> hugo
   m_SearchFilter:
     m_NameFilter:
     m_ClassNames: []
@@ -419,16 +581,11 @@ MonoBehaviour:
     m_SearchArea: 1
     m_Folders:
 <<<<<<< HEAD
-    - Assets
-    m_Globs: []
-  m_ViewMode: 1
-  m_StartGridSize: 64
-  m_LastFolders:
-  - Assets
-  m_LastFoldersGridSize: -1
-  m_LastProjectPath: U:\layout
-=======
+<<<<<<< HEAD
     - Assets/Scripts/Proto2
+=======
+    - Assets
+>>>>>>> hugo
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
@@ -436,13 +593,43 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scripts/Proto2
   m_LastFoldersGridSize: -1
+<<<<<<< HEAD
+  m_LastProjectPath: C:\Users\PIERRE\OneDrive\Documents\GitHub\GodFather23URP\GodFather23URP
+=======
+    - Assets
+=======
+  m_LastProjectPath: U:\layout
+=======
+    - Assets/Scripts/Proto2
+>>>>>>> hugo
+    m_Globs: []
+  m_ViewMode: 1
+  m_StartGridSize: 64
+  m_LastFolders:
+  - Assets
+  m_LastFoldersGridSize: -1
+<<<<<<< HEAD
+  m_LastProjectPath: U:\layout
+>>>>>>> hugo
+=======
   m_LastProjectPath: C:\Users\PIERRE\OneDrive\Documents\GitHub\GodFather23URP\GodFather23URP
 >>>>>>> pierre
+>>>>>>> hugo
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
+    m_SelectedIDs: f0750000
+    m_LastClickedID: 30192
+    m_ExpandedIDs: 00000000766f00008a6f000000ca9a3bffffff7f
+=======
+    m_SelectedIDs: f4350000
+    m_LastClickedID: 13812
+    m_ExpandedIDs: 00000000f435000000ca9a3b
+>>>>>>> hugo
+=======
     m_SelectedIDs: f4350000
     m_LastClickedID: 13812
     m_ExpandedIDs: 00000000f435000000ca9a3b
@@ -451,6 +638,7 @@ MonoBehaviour:
     m_LastClickedID: 30192
     m_ExpandedIDs: 00000000766f00008a6f000000ca9a3bffffff7f
 >>>>>>> pierre
+>>>>>>> hugo
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name:
@@ -479,10 +667,17 @@ MonoBehaviour:
     m_SelectedIDs:
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+    m_ExpandedIDs: 00000000766f0000
+=======
+    m_ExpandedIDs: 00000000f4350000
+>>>>>>> hugo
+=======
     m_ExpandedIDs: 00000000f4350000
 =======
     m_ExpandedIDs: 00000000766f0000
 >>>>>>> pierre
+>>>>>>> hugo
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name:
@@ -510,10 +705,17 @@ MonoBehaviour:
     m_SelectedInstanceIDs:
     m_LastClickedInstanceID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+    m_HadKeyboardFocusLastEvent: 1
+=======
+    m_HadKeyboardFocusLastEvent: 0
+>>>>>>> hugo
+=======
     m_HadKeyboardFocusLastEvent: 0
 =======
     m_HadKeyboardFocusLastEvent: 1
 >>>>>>> pierre
+>>>>>>> hugo
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -531,10 +733,17 @@ MonoBehaviour:
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
+      m_ClientGUIView: {fileID: 5}
+=======
+      m_ClientGUIView: {fileID: 0}
+>>>>>>> hugo
+=======
       m_ClientGUIView: {fileID: 0}
 =======
       m_ClientGUIView: {fileID: 5}
 >>>>>>> pierre
+>>>>>>> hugo
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -567,12 +776,15 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
     x: 3170
     y: 332.5
     width: 284
     height: 644
   m_ViewDataDictionary: {fileID: 0}
 =======
+>>>>>>> hugo
     x: 1466
     y: 73
     width: 453
@@ -581,7 +793,17 @@ MonoBehaviour:
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
+<<<<<<< HEAD
+=======
+    x: 3170
+    y: 332.5
+    width: 284
+    height: 644
+  m_ViewDataDictionary: {fileID: 0}
+>>>>>>> hugo
+=======
 >>>>>>> pierre
+>>>>>>> hugo
   m_ObjectsLockedBeforeSerialization: []
   m_InstanceIDsLockedBeforeSerialization:
   m_PreviewResizer:
@@ -591,12 +813,21 @@ MonoBehaviour:
   m_LastInspectedObjectInstanceID: -1
   m_LastVerticalScrollValue: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+  m_GlobalObjectId: 
+  m_InspectorMode: 0
+=======
+  m_AssetGUID:
+  m_InstanceID: 0
+>>>>>>> hugo
+=======
   m_AssetGUID:
   m_InstanceID: 0
 =======
   m_GlobalObjectId: 
   m_InspectorMode: 0
 >>>>>>> pierre
+>>>>>>> hugo
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}
@@ -621,16 +852,28 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
     x: 2249
     y: 332.5
     width: 227
     height: 373
 =======
+>>>>>>> hugo
     x: 0
     y: 73
     width: 362
     height: 540
+<<<<<<< HEAD
+=======
+    x: 2249
+    y: 332.5
+    width: 227
+    height: 373
+>>>>>>> hugo
+=======
 >>>>>>> pierre
+>>>>>>> hugo
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -639,6 +882,16 @@ MonoBehaviour:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
+      m_SelectedIDs: 561f0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: c677ffffca8affffbaa1ffff1aa4ffffdca6ffff6ea8ffff44a9ffff24aaffffd8aaffff12adfffff8b6ffff56f9ffff24fbffffda990000529e0000
+=======
+      m_SelectedIDs:
+      m_LastClickedID: 0
+      m_ExpandedIDs: 42fbffff
+>>>>>>> hugo
+=======
       m_SelectedIDs:
       m_LastClickedID: 0
       m_ExpandedIDs: 42fbffff
@@ -647,6 +900,7 @@ MonoBehaviour:
       m_LastClickedID: 0
       m_ExpandedIDs: c677ffffca8affffbaa1ffff1aa4ffffdca6ffff6ea8ffff44a9ffff24aaffffd8aaffff12adfffff8b6ffff56f9ffff24fbffffda990000529e0000
 >>>>>>> pierre
+>>>>>>> hugo
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name:
@@ -663,12 +917,21 @@ MonoBehaviour:
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+        m_ClientGUIView: {fileID: 4}
+      m_SearchString: 
+=======
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString:
+>>>>>>> hugo
+=======
         m_ClientGUIView: {fileID: 0}
       m_SearchString:
 =======
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
 >>>>>>> pierre
+>>>>>>> hugo
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
     m_LockTracker:
@@ -696,16 +959,28 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
     x: 2477
     y: 332.5
     width: 691
     height: 373
 =======
+>>>>>>> hugo
     x: 363
     y: 73
     width: 1101
     height: 540
+<<<<<<< HEAD
+=======
+    x: 2477
+    y: 332.5
+    width: 691
+    height: 373
+>>>>>>> hugo
+=======
 >>>>>>> pierre
+>>>>>>> hugo
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -963,6 +1238,16 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_Position:
 <<<<<<< HEAD
+<<<<<<< HEAD
+    m_Target: {x: 614.5414, y: 311.3282, z: 2.4326754}
+    speed: 2
+    m_Value: {x: 614.5414, y: 311.3282, z: 2.4326754}
+=======
+    m_Target: {x: 0, y: 0, z: 0}
+    speed: 2
+    m_Value: {x: 0, y: 0, z: 0}
+>>>>>>> hugo
+=======
     m_Target: {x: 0, y: 0, z: 0}
     speed: 2
     m_Value: {x: 0, y: 0, z: 0}
@@ -971,6 +1256,7 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 614.5414, y: 311.3282, z: 2.4326754}
 >>>>>>> pierre
+>>>>>>> hugo
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1022,6 +1308,16 @@ MonoBehaviour:
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
 <<<<<<< HEAD
+<<<<<<< HEAD
+    m_Target: 403.87848
+    speed: 2
+    m_Value: 403.87848
+=======
+    m_Target: 10
+    speed: 2
+    m_Value: 10
+>>>>>>> hugo
+=======
     m_Target: 10
     speed: 2
     m_Value: 10
@@ -1030,6 +1326,7 @@ MonoBehaviour:
     speed: 2
     m_Value: 403.87848
 >>>>>>> pierre
+>>>>>>> hugo
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1075,6 +1372,8 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
     x: 507
     y: 94
     width: 1532
@@ -1083,6 +1382,7 @@ MonoBehaviour:
   m_SerializedViewsNames: []
   m_SerializedViewsValues: []
 =======
+>>>>>>> hugo
     x: 363
     y: 73
     width: 1101
@@ -1093,24 +1393,49 @@ MonoBehaviour:
     m_SaveData: []
   m_SerializedViewNames: []
   m_SerializedViewValues: []
+<<<<<<< HEAD
+=======
+    x: 507
+    y: 94
+    width: 1532
+    height: 790
+  m_ViewDataDictionary: {fileID: 0}
+  m_SerializedViewsNames: []
+  m_SerializedViewsValues: []
+>>>>>>> hugo
+=======
 >>>>>>> pierre
+>>>>>>> hugo
   m_PlayModeViewName: GameView
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
   m_TargetSize: {x: 640, y: 480}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 0
   m_MaximizeOnPlay: 0
 =======
+>>>>>>> hugo
   m_TargetSize: {x: 1101, y: 519}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
   m_EnterPlayModeBehavior: 0
+<<<<<<< HEAD
+=======
+  m_TargetSize: {x: 640, y: 480}
+  m_TextureFilterMode: 0
+  m_TextureHideFlags: 61
+  m_RenderIMGUI: 0
+  m_MaximizeOnPlay: 0
+>>>>>>> hugo
+=======
 >>>>>>> pierre
+>>>>>>> hugo
   m_UseMipMap: 0
   m_VSyncEnabled: 0
   m_Gizmos: 0
@@ -1122,16 +1447,28 @@ MonoBehaviour:
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
     m_HBaseRangeMin: -766
     m_HBaseRangeMax: 766
     m_VBaseRangeMin: -395
     m_VBaseRangeMax: 395
 =======
+>>>>>>> hugo
     m_HBaseRangeMin: -550.5
     m_HBaseRangeMax: 550.5
     m_VBaseRangeMin: -259.5
     m_VBaseRangeMax: 259.5
+<<<<<<< HEAD
+=======
+    m_HBaseRangeMin: -766
+    m_HBaseRangeMax: 766
+    m_VBaseRangeMin: -395
+    m_VBaseRangeMax: 395
+>>>>>>> hugo
+=======
 >>>>>>> pierre
+>>>>>>> hugo
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -1149,18 +1486,31 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
       y: 0
       width: 1532
       height: 790
     m_Scale: {x: 1, y: 1}
     m_Translation: {x: 766, y: 395}
 =======
+>>>>>>> hugo
       y: 21
       width: 1101
       height: 519
     m_Scale: {x: 1, y: 1}
     m_Translation: {x: 550.5, y: 259.5}
+<<<<<<< HEAD
+=======
+      y: 0
+      width: 1532
+      height: 790
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 766, y: 395}
+>>>>>>> hugo
+=======
 >>>>>>> pierre
+>>>>>>> hugo
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -1168,6 +1518,8 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
       x: -766
       y: -395
       width: 1532
@@ -1176,6 +1528,7 @@ MonoBehaviour:
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1532, y: 790}
 =======
+>>>>>>> hugo
       x: -550.5
       y: -259.5
       width: 1101
@@ -1183,7 +1536,19 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1101, y: 540}
+<<<<<<< HEAD
+=======
+      x: -766
+      y: -395
+      width: 1532
+      height: 790
+    m_MinimalGUI: 1
+  m_defaultScale: 1
+  m_LastWindowPixelSize: {x: 1532, y: 790}
+>>>>>>> hugo
+=======
 >>>>>>> pierre
+>>>>>>> hugo
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -1210,6 +1575,8 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
     x: 2249
     y: 726.5
     width: 920
@@ -1217,6 +1584,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
 
 =======
+>>>>>>> hugo
     x: 0
     y: 634
     width: 1465
@@ -1225,4 +1593,15 @@ MonoBehaviour:
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
+<<<<<<< HEAD
+=======
+    x: 2249
+    y: 726.5
+    width: 920
+    height: 250
+  m_ViewDataDictionary: {fileID: 0}
+
+>>>>>>> hugo
+=======
 >>>>>>> pierre
+>>>>>>> hugo
