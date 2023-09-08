@@ -7,6 +7,8 @@ public class WebSpawnerp2 : MonoBehaviour
     [SerializeField] GameObject _web;
     public GameObject _actualWeb;
     bool _alreadyAWeb;
+
+    private
     void Start()
     {
 
@@ -29,11 +31,16 @@ public class WebSpawnerp2 : MonoBehaviour
             }
 
         }
+        if (Input.GetKeyDown("escape"))
+        {
+            _actualWeb.GetComponent<SpawnCobweb>().SelfDestruct();
+            _actualWeb.GetComponent<SpawnCobweb>()._isDead = false;
+        }
     }
     public void NoWeb()
     {
         _alreadyAWeb = false;
-        Debug.Log(_alreadyAWeb);
+        //Debug.Log(_alreadyAWeb);
     }
     void NewWeb()
     {
