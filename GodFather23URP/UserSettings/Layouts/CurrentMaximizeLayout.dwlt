@@ -161,6 +161,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 1466
     height: 561
   m_MinSize: {x: 200, y: 100}
@@ -184,6 +185,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
     width: 363
     height: 561
   m_MinSize: {x: 200, y: 200}
@@ -215,6 +217,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73
+<<<<<<< HEAD
     width: 362
     height: 540
   m_ViewDataDictionary: {fileID: 0}
@@ -265,8 +268,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 363
+    x: 129
     y: 0
+<<<<<<< HEAD
     width: 1103
     height: 561
   m_MinSize: {x: 202, y: 221}
@@ -296,8 +300,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 363
+    x: 129
     y: 73
+<<<<<<< HEAD
     width: 1101
     height: 540
   m_ViewDataDictionary: {fileID: 0}
@@ -716,6 +721,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: d67b0000
     m_LastClickedID: 31702
