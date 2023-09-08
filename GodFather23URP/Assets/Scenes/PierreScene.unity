@@ -222,9 +222,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 60
+  m_MaxValue: 5
   m_WholeNumbers: 0
-  m_Value: 60
+  m_Value: 5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -847,6 +847,7 @@ GameObject:
   - component: {fileID: 1746840227}
   - component: {fileID: 1746840226}
   - component: {fileID: 1746840228}
+  - component: {fileID: 1746840229}
   m_Layer: 0
   m_Name: spawnPoint
   m_TagString: Untagged
@@ -903,11 +904,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bcc1453a49f5c94da814aa1cac4a307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxtime: 100
+  maxtime: 5
   damages: 1
   currentHealth: 0
   timer: 1
   slideBar: {fileID: 89209074}
+  DieMenu: {fileID: 692917821302667647}
+--- !u!114 &1746840229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746840225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 429a10e326ca53b4bb7b5be9d44aa6f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2133684300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1022,7 +1036,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1005982694987285332
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,7 +1228,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1746840229}
         m_TargetAssemblyTypeName: ManaUi, Assembly-CSharp
         m_MethodName: MainMenuButton
         m_Mode: 1
@@ -1481,7 +1495,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1746840229}
         m_TargetAssemblyTypeName: ManaUi, Assembly-CSharp
         m_MethodName: QuitterButton
         m_Mode: 1
