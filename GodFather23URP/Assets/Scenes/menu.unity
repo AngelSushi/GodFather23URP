@@ -2529,7 +2529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68c94accf377a2544a0c9198c65346c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: HugoScene
+  levelToLoad: Fix
   settingsWindow: {fileID: 6573492815492763298}
   scoresBoardWindow: {fileID: 1576505586}
 --- !u!4 &930363499
